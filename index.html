@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="siteTitle">Travels of Shri Krishna</title>
+  <meta name="description" data-i18n="metaDesc" content="An interactive map of Lord Krishna's travels across ancient India, chronicling the demons He defeated and the divine pastimes at each sacred location.">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-ornament header-ornament--left"></div>
+    <div class="header-content">
+      <div class="lotus-container" id="headerLotus">
+        <svg class="lotus-svg" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+          <g class="lotus-bloom">
+            <ellipse class="lotus-petal petal-1" cx="60" cy="50" rx="12" ry="35" fill="#FF9933" opacity="0.85"/>
+            <ellipse class="lotus-petal petal-2" cx="60" cy="50" rx="12" ry="35" fill="#FF9933" opacity="0.85"/>
+            <ellipse class="lotus-petal petal-3" cx="60" cy="50" rx="12" ry="35" fill="#FF9933" opacity="0.85"/>
+            <ellipse class="lotus-petal petal-4" cx="60" cy="50" rx="12" ry="35" fill="#FF9933" opacity="0.85"/>
+            <ellipse class="lotus-petal petal-5" cx="60" cy="50" rx="12" ry="35" fill="#FF9933" opacity="0.85"/>
+            <ellipse class="lotus-petal petal-6" cx="60" cy="50" rx="12" ry="35" fill="#e8820a" opacity="0.85"/>
+            <ellipse class="lotus-petal petal-7" cx="60" cy="50" rx="12" ry="35" fill="#e8820a" opacity="0.85"/>
+            <ellipse class="lotus-petal petal-8" cx="60" cy="50" rx="12" ry="35" fill="#e8820a" opacity="0.85"/>
+            <circle class="lotus-center" cx="60" cy="50" r="8" fill="#DAA520"/>
+          </g>
+        </svg>
+      </div>
+      <h1 class="site-title" data-i18n="siteTitle">Travels of Shri Krishna</h1>
+      <p class="site-subtitle" data-i18n="siteSubtitle">A Chronicle of Divine Pastimes &amp; Demon Battles</p>
+    </div>
+    <div class="header-ornament header-ornament--right"></div>
+    <div class="header-actions">
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="hi">हि</button>
+        <button type="button" class="lang-btn" data-lang="es">ES</button>
+      </div>
+      <button class="header-btn" id="btnHeaderQuest" data-i18n="questMode">Quest Mode</button>
+      <button class="header-btn" id="btnOpenForms" data-i18n="divineForms">Divine Forms</button>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="main-layout">
+
+    <!-- Sidebar Timeline -->
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar-toggle" id="sidebarToggle" data-i18n-aria="toggleTimeline" aria-label="Toggle timeline">
+        <span class="toggle-icon">&#9776;</span>
+      </button>
+      <div class="sidebar-inner">
+        <!-- Quest Controls -->
+        <button class="btn-quest" id="btnBeginQuest" data-i18n="beginQuest">Begin Quest</button>
+        <button class="btn-quest btn-quest-exit" id="btnExitQuest" style="display:none" data-i18n="exitQuest">Exit Quest</button>
+
+        <!-- Quest Progress Panel -->
+        <div id="questPanel" style="display:none" class="quest-panel">
+          <div class="quest-xp-bar">
+            <div class="quest-xp-fill" id="questXPFill"></div>
+          </div>
+          <div class="quest-xp-label" id="questXPLabel">0 / 0 XP</div>
+          <div class="quest-demon-count" id="questDemonCount">Demons Vanquished: 0 / 15</div>
+        </div>
+
+        <h2 class="sidebar-title" data-i18n="journeyTimeline">Journey Timeline</h2>
+        <div class="ornamental-divider"></div>
+        <ul class="timeline-list" id="timelineList"></ul>
+        <div class="ornamental-divider"></div>
+
+        <!-- Free Explore Controls -->
+        <div id="freePanel">
+          <button class="btn-journey" id="btnShowJourney">
+            <span class="btn-icon">&#10043;</span> Show Journey Path
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Map Container -->
+    <div class="map-wrapper">
+      <div id="map" class="map-container"></div>
+    </div>
+
+  </main>
+
+  <!-- Encyclopedia Overlay -->
+  <div class="encyclopedia-overlay" id="encyclopediaOverlay">
+    <div class="encyclopedia-card">
+      <button class="encyclopedia-close" id="encyclopediaClose">&times;</button>
+      <div class="encyclopedia-header">
+        <h2 class="encyclopedia-title" id="encTitle"></h2>
+        <p class="encyclopedia-demon" id="encDemon"></p>
+      </div>
+      <div class="lotus-divider">
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="10" x2="80" y2="10" stroke="#DAA520" stroke-width="1"/>
+          <circle cx="100" cy="10" r="5" fill="#FF9933"/>
+          <circle cx="100" cy="10" r="2.5" fill="#DAA520"/>
+          <line x1="120" y1="10" x2="200" y2="10" stroke="#DAA520" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="encyclopedia-body" id="encBody"></div>
+      <div class="encyclopedia-actions">
+        <button class="btn-watch-battle" id="btnWatchBattle" data-i18n="watchBattle">Watch Battle</button>
+      </div>
+      <div class="encyclopedia-footer">
+        <p class="encyclopedia-source" data-i18n="source">Source: Srimad Bhagavatam &amp; Mahabharata</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Battle Theater Overlay -->
+  <div class="battle-overlay" id="battleTheater">
+    <button class="battle-close" id="battleClose">&times;</button>
+    <h2 class="battle-title" id="battleTitle"></h2>
+    <div class="battle-stage" id="battleStage"></div>
+    <div class="battle-narration-bar">
+      <p class="battle-narration-text" id="battleNarration"></p>
+      <div class="battle-controls" id="battleControls">
+        <span class="battle-step-indicator" id="battleStepIndicator"></span>
+        <button type="button" class="battle-skip" id="battleSkip" data-i18n="skipToEnd">Skip to End &#9654;</button>
+        <button type="button" class="battle-done" id="battleDone" data-i18n="continueBattle">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Victory Screen Overlay -->
+  <div class="victory-overlay" id="victoryOverlay">
+    <div class="victory-card">
+      <button class="victory-close-btn" id="victoryClose">&times;</button>
+      <div class="victory-chakra-container">
+        <svg class="victory-chakra-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <g class="vc-spin" transform="translate(100,100)">
+            <circle cx="0" cy="0" r="80" fill="none" stroke="#DAA520" stroke-width="3"/>
+            <circle cx="0" cy="0" r="55" fill="none" stroke="#FF9933" stroke-width="2"/>
+            <circle cx="0" cy="0" r="18" fill="#DAA520"/>
+          </g>
+        </svg>
+      </div>
+      <h2 class="victory-title" data-i18n="allDemonsVanquished">All Demons Vanquished!</h2>
+      <p class="victory-subtitle" data-i18n="victorySubtitle">The divine journey of Shri Krishna is complete.</p>
+      <p class="victory-xp" id="victoryXP">0 XP Earned</p>
+      <div class="ornamental-divider"></div>
+      <button class="btn-journey" id="victoryContinue" data-i18n="continueExploring">Continue Exploring</button>
+    </div>
+  </div>
+
+  <!-- Sacred Galleries (Krishna forms, avatars, deities) -->
+  <div class="forms-overlay" id="formsGallery">
+    <div class="forms-container">
+      <button class="forms-close" id="formsClose">&times;</button>
+      <h2 class="forms-title" id="galleryMainTitle" data-i18n="galTitleKrishna">Krishna&apos;s līlā forms</h2>
+      <p class="forms-subtitle" id="galleryMainSubtitle" data-i18n="galSubKrishna">The playful and royal manifestations celebrated on this journey map.</p>
+      <div class="ornamental-divider"></div>
+      <div class="gallery-tabs" role="tablist" data-i18n-aria="gallerySections" aria-label="Gallery sections">
+        <button type="button" class="gallery-tab is-active" role="tab" id="galleryTabKrishna" data-tab="krishna" data-i18n="tabKrishna" data-i18n-title="galTitleKrishna" data-i18n-subtitle="galSubKrishna" aria-selected="true" aria-controls="galleryPanelKrishna">Krishna&apos;s forms</button>
+        <button type="button" class="gallery-tab" role="tab" id="galleryTabAvatars" data-tab="avatars" data-i18n="tabAvatars" data-i18n-title="galTitleAvatars" data-i18n-subtitle="galSubAvatars" aria-selected="false" aria-controls="galleryPanelAvatars">Divine avatars</button>
+        <button type="button" class="gallery-tab" role="tab" id="galleryTabDeities" data-tab="deities" data-i18n="tabDeities" data-i18n-title="galTitleDeities" data-i18n-subtitle="galSubDeities" aria-selected="false" aria-controls="galleryPanelDeities">Hindu deities</button>
+      </div>
+      <div class="gallery-panel is-active" role="tabpanel" id="galleryPanelKrishna" data-tab="krishna" aria-labelledby="galleryTabKrishna" aria-hidden="false">
+        <div class="forms-grid" id="formsGridKrishna"></div>
+      </div>
+      <div class="gallery-panel" role="tabpanel" id="galleryPanelAvatars" data-tab="avatars" aria-labelledby="galleryTabAvatars" aria-hidden="true">
+        <div class="forms-grid" id="formsGridAvatars"></div>
+      </div>
+      <div class="gallery-panel" role="tabpanel" id="galleryPanelDeities" data-tab="deities" aria-labelledby="galleryTabDeities" aria-hidden="true">
+        <div class="forms-grid" id="formsGridDeities"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen image viewer (paintings & gallery art) -->
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true" role="dialog" data-i18n-aria="artworkViewer" aria-label="Artwork viewer">
+    <button type="button" class="image-lightbox-close" id="imageLightboxClose" data-i18n-aria="closeArtwork" aria-label="Close artwork">&times;</button>
+    <div class="image-lightbox-inner">
+      <img id="imageLightboxImg" alt="">
+      <p class="image-lightbox-caption" id="imageLightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+
+  <!-- App Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/forms-data.js"></script>
+  <script src="js/avatars-data.js"></script>
+  <script src="js/deities-data.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/battle.js"></script>
+  <script src="js/quest.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1733 @@
+/* ===================================================================
+   Krishna Travels Map — Traditional Hindu Design System
+   =================================================================== */
+
+:root {
+  --saffron: #FF9933;
+  --saffron-light: #FFB366;
+  --deep-red: #8B0000;
+  --gold: #DAA520;
+  --gold-light: #F0D060;
+  --ivory: #FFFFF0;
+  --ivory-warm: #FFF8E7;
+  --maroon: #800000;
+  --royal-blue: #1A237E;
+  --dark-bg: #1a0f0a;
+  --parchment: #F5E6C8;
+  --parchment-dark: #E8D5A8;
+  --text-dark: #2C1810;
+  --text-light: #FFF8E7;
+  --shadow-gold: rgba(218, 165, 32, 0.4);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+
+  --font-display: 'Yatra One', cursive;
+  --font-body: 'Tiro Devanagari Hindi', serif;
+
+  --sidebar-width: 320px;
+  --header-height: 140px;
+}
+
+/* ---- Reset & Base ---- */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--dark-bg);
+}
+
+/* ---- Parchment Background Pattern ---- */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255, 153, 51, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(218, 165, 32, 0.05) 0%, transparent 50%),
+    linear-gradient(180deg, #1a0f0a 0%, #2C1810 50%, #1a0f0a 100%);
+  z-index: -1;
+}
+
+/* ===================================================================
+   HEADER
+   =================================================================== */
+
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--header-height);
+  background: linear-gradient(180deg, #2C1810 0%, #1a0f0a 100%);
+  border-bottom: 3px solid var(--gold);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.site-header::before,
+.site-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.site-header::before {
+  bottom: 6px;
+  background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+}
+
+.site-header::after {
+  bottom: 10px;
+  background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.3), transparent);
+}
+
+.header-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.header-ornament {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.header-ornament--left {
+  left: 20px;
+}
+
+.header-ornament--right {
+  right: 20px;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--gold);
+  text-shadow:
+    0 0 20px var(--shadow-gold),
+    0 2px 4px var(--shadow-dark);
+  letter-spacing: 0.05em;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.site-subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--saffron-light);
+  opacity: 0.85;
+  margin-top: 4px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+@keyframes titleGlow {
+  from { text-shadow: 0 0 20px var(--shadow-gold), 0 2px 4px var(--shadow-dark); }
+  to   { text-shadow: 0 0 40px var(--shadow-gold), 0 0 80px rgba(255, 153, 51, 0.2), 0 2px 4px var(--shadow-dark); }
+}
+
+/* ---- Lotus SVG in Header ---- */
+
+.lotus-container {
+  width: 70px;
+  height: 60px;
+  margin: 0 auto 6px;
+}
+
+.lotus-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.lotus-petal {
+  transform-origin: 60px 50px;
+  animation: lotusBloom 2s ease-out forwards;
+  opacity: 0;
+}
+
+.petal-1 { animation-delay: 0.2s; --petal-angle: -60deg; }
+.petal-2 { animation-delay: 0.3s; --petal-angle: -35deg; }
+.petal-3 { animation-delay: 0.4s; --petal-angle: -10deg; }
+.petal-4 { animation-delay: 0.5s; --petal-angle: 15deg; }
+.petal-5 { animation-delay: 0.6s; --petal-angle: 40deg; }
+.petal-6 { animation-delay: 0.35s; --petal-angle: -48deg; }
+.petal-7 { animation-delay: 0.45s; --petal-angle: -5deg; }
+.petal-8 { animation-delay: 0.55s; --petal-angle: 28deg; }
+
+@keyframes lotusBloom {
+  0%   { transform: rotate(0deg) scale(0.2); opacity: 0; }
+  60%  { opacity: 0.85; }
+  100% { transform: rotate(var(--petal-angle)) scale(1); opacity: 0.85; }
+}
+
+.lotus-center {
+  animation: lotusCenterPop 0.5s ease-out 1s forwards;
+  opacity: 0;
+  transform-origin: 60px 50px;
+}
+
+@keyframes lotusCenterPop {
+  0%   { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ===================================================================
+   MAIN LAYOUT
+   =================================================================== */
+
+.main-layout {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  position: relative;
+}
+
+/* ===================================================================
+   SIDEBAR
+   =================================================================== */
+
+.sidebar {
+  position: relative;
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background: linear-gradient(180deg, #2C1810 0%, #1a0f0a 80%);
+  border-right: 2px solid var(--gold);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: margin-left 0.4s ease;
+  z-index: 900;
+}
+
+.sidebar.collapsed {
+  margin-left: calc(-1 * var(--sidebar-width));
+}
+
+.sidebar-toggle {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: -44px;
+  width: 40px;
+  height: 40px;
+  background: var(--maroon);
+  border: 1px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  color: var(--gold);
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 901;
+  transition: background 0.3s;
+}
+
+.sidebar-toggle:hover {
+  background: var(--deep-red);
+}
+
+.sidebar-inner {
+  padding: 20px 16px;
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+}
+
+.sidebar-inner::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-inner::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.ornamental-divider {
+  height: 12px;
+  margin: 8px 0 16px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12'%3E%3Cline x1='0' y1='6' x2='80' y2='6' stroke='%23DAA520' stroke-width='0.5'/%3E%3Ccircle cx='90' cy='6' r='2' fill='%23FF9933'/%3E%3Ccircle cx='100' cy='6' r='3' fill='%23DAA520'/%3E%3Ccircle cx='110' cy='6' r='2' fill='%23FF9933'/%3E%3Cline x1='120' y1='6' x2='200' y2='6' stroke='%23DAA520' stroke-width='0.5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* ---- Timeline List ---- */
+
+.timeline-list {
+  list-style: none;
+  position: relative;
+  padding-left: 24px;
+}
+
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold), var(--saffron), var(--gold));
+  opacity: 0.5;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--saffron);
+  border: 2px solid var(--gold);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-item:hover {
+  background: rgba(218, 165, 32, 0.1);
+  transform: translateX(4px);
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.3);
+  box-shadow: 0 0 10px var(--shadow-gold);
+}
+
+.timeline-item.active {
+  background: rgba(255, 153, 51, 0.15);
+}
+
+.timeline-item.active::before {
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--shadow-gold);
+}
+
+.timeline-item-number {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.timeline-item-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--saffron-light);
+  display: block;
+}
+
+.timeline-item-demon {
+  font-size: 0.78rem;
+  color: rgba(255, 248, 231, 0.55);
+  display: block;
+  margin-top: 2px;
+}
+
+/* ---- Show Journey Button ---- */
+
+.btn-journey {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--ivory);
+  background: linear-gradient(135deg, var(--maroon), var(--deep-red));
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.btn-journey:hover {
+  background: linear-gradient(135deg, var(--deep-red), #a00000);
+  box-shadow: 0 0 20px var(--shadow-gold);
+  transform: translateY(-1px);
+}
+
+.btn-journey .btn-icon {
+  margin-right: 6px;
+}
+
+.btn-journey.active {
+  background: linear-gradient(135deg, #006400, #004d00);
+  border-color: #90EE90;
+}
+
+/* ===================================================================
+   MAP
+   =================================================================== */
+
+.map-wrapper {
+  flex: 1;
+  position: relative;
+  animation: mapFadeIn 1.2s ease-out;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes mapFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Override Leaflet default popup styles */
+.leaflet-popup-content-wrapper {
+  background: linear-gradient(135deg, #2C1810 0%, #1a0f0a 100%);
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  box-shadow:
+    0 0 20px var(--shadow-gold),
+    0 8px 32px var(--shadow-dark);
+  color: var(--ivory-warm);
+  padding: 0;
+  animation: popupEnter 0.35s ease-out;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  min-width: 260px;
+  max-width: 320px;
+  max-height: calc(100vh - var(--header-height) - 120px);
+  overflow-y: auto;
+}
+
+.leaflet-popup-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.leaflet-popup-content::-webkit-scrollbar-track {
+  background: rgba(26, 15, 10, 0.5);
+  border-radius: 3px;
+}
+
+.leaflet-popup-content::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+.leaflet-popup-tip {
+  background: #2C1810;
+  box-shadow: 0 4px 8px var(--shadow-dark);
+}
+
+.leaflet-popup-close-button {
+  color: var(--gold) !important;
+  font-size: 22px !important;
+  top: 6px !important;
+  right: 8px !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: var(--saffron) !important;
+}
+
+@keyframes popupEnter {
+  from { transform: scale(0.85) translateY(10px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Popup inner content */
+
+.popup-content {
+  padding: 16px 18px;
+}
+
+.popup-img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(218, 165, 32, 0.3);
+  display: block;
+}
+
+/* Clickable art — opens fullscreen lightbox */
+.js-lightbox-img {
+  cursor: zoom-in;
+}
+
+.popup-location {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.popup-demon {
+  font-size: 0.85rem;
+  color: var(--saffron-light);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.popup-summary {
+  font-size: 0.88rem;
+  color: rgba(255, 248, 231, 0.8);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+.popup-read-more {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  color: var(--gold);
+  background: none;
+  border: 1px solid var(--gold);
+  padding: 5px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.popup-read-more:hover {
+  background: var(--gold);
+  color: var(--dark-bg);
+  box-shadow: 0 0 14px var(--shadow-gold);
+}
+
+/* ===================================================================
+   CUSTOM MARKER (Sudarshana Chakra)
+   =================================================================== */
+
+.chakra-div-icon {
+  background: none !important;
+  border: none !important;
+}
+
+.chakra-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.chakra-marker svg {
+  filter: drop-shadow(0 0 6px var(--shadow-gold));
+  transition: transform 0.3s;
+  animation: chakraSpin 12s linear infinite;
+}
+
+.chakra-marker:hover svg {
+  transform: scale(1.25);
+  animation-duration: 3s;
+}
+
+@keyframes chakraSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.chakra-marker .marker-pulse {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 153, 51, 0.4), transparent 70%);
+  animation: markerPulse 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes markerPulse {
+  0%, 100% { transform: scale(0.8); opacity: 0.5; }
+  50%      { transform: scale(1.8); opacity: 0; }
+}
+
+/* ===================================================================
+   ENCYCLOPEDIA OVERLAY
+   =================================================================== */
+
+.encyclopedia-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.encyclopedia-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.encyclopedia-card {
+  position: relative;
+  width: 90%;
+  max-width: 680px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: linear-gradient(160deg, #2C1810 0%, #1a0f0a 60%, #2C1810 100%);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  padding: 32px 36px;
+  box-shadow:
+    0 0 40px var(--shadow-gold),
+    0 16px 48px var(--shadow-dark),
+    inset 0 1px 0 rgba(218, 165, 32, 0.2);
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.4s ease-out;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+}
+
+.encyclopedia-card::before,
+.encyclopedia-card::after {
+  content: '❖';
+  position: absolute;
+  font-size: 1.2rem;
+  color: var(--gold);
+  opacity: 0.5;
+}
+
+.encyclopedia-card::before {
+  top: 8px;
+  left: 12px;
+}
+
+.encyclopedia-card::after {
+  bottom: 8px;
+  right: 12px;
+}
+
+.encyclopedia-overlay.visible .encyclopedia-card {
+  transform: scale(1) translateY(0);
+}
+
+.encyclopedia-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.encyclopedia-card::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+.encyclopedia-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 2rem;
+  color: var(--gold);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.encyclopedia-close:hover {
+  color: var(--saffron);
+  transform: scale(1.2);
+}
+
+.encyclopedia-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.encyclopedia-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--gold);
+  text-shadow: 0 0 20px var(--shadow-gold);
+}
+
+.encyclopedia-demon {
+  font-size: 1rem;
+  color: var(--saffron-light);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.lotus-divider {
+  margin: 16px auto;
+  width: 200px;
+}
+
+.lotus-divider svg {
+  width: 100%;
+  height: 20px;
+}
+
+.enc-art {
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.enc-art-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.enc-painting {
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.enc-painting img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 2px solid rgba(218, 165, 32, 0.25);
+  background: rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto;
+}
+
+.enc-painting figcaption {
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+.enc-painting figcaption small {
+  color: rgba(218, 165, 32, 0.55);
+  font-size: 0.72rem;
+}
+
+.encyclopedia-body {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(255, 248, 231, 0.85);
+}
+
+.encyclopedia-body p {
+  margin-bottom: 14px;
+  text-align: justify;
+}
+
+.encyclopedia-body .story-section-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--saffron);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.encyclopedia-footer {
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(218, 165, 32, 0.3);
+  text-align: center;
+}
+
+.encyclopedia-source {
+  font-size: 0.8rem;
+  color: rgba(218, 165, 32, 0.6);
+  font-style: italic;
+}
+
+/* ===================================================================
+   ANIMATED TRAVEL PATH
+   =================================================================== */
+
+.journey-polyline {
+  filter: drop-shadow(0 0 4px rgba(218, 165, 32, 0.6));
+}
+
+/* ===================================================================
+   GOLD SHIMMER EFFECT (for interactive elements)
+   =================================================================== */
+
+@keyframes goldShimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-hover:hover {
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(218, 165, 32, 0.1) 40%,
+    rgba(218, 165, 32, 0.2) 50%,
+    rgba(218, 165, 32, 0.1) 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: goldShimmer 1.5s linear;
+}
+
+/* ===================================================================
+   RESPONSIVE
+   =================================================================== */
+
+@media (max-width: 900px) {
+  :root {
+    --sidebar-width: 280px;
+    --header-height: 110px;
+  }
+
+  .site-title { font-size: 1.6rem; }
+  .site-subtitle { font-size: 0.8rem; }
+  .lotus-container { width: 50px; height: 42px; }
+
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 950;
+    box-shadow: 4px 0 20px var(--shadow-dark);
+  }
+
+  .sidebar.collapsed {
+    margin-left: calc(-1 * var(--sidebar-width));
+  }
+
+  .sidebar-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --sidebar-width: 260px;
+    --header-height: 100px;
+  }
+
+  .site-title { font-size: 1.3rem; }
+  .header-ornament { display: none; }
+
+  .encyclopedia-card {
+    padding: 24px 20px;
+    width: 95%;
+  }
+
+  .encyclopedia-title { font-size: 1.4rem; }
+
+  .leaflet-popup-content {
+    min-width: 220px;
+    max-width: 280px;
+  }
+}
+
+/* ===================================================================
+   Leaflet attribution styling
+   =================================================================== */
+
+.leaflet-control-attribution {
+  background: rgba(26, 15, 10, 0.85) !important;
+  color: rgba(218, 165, 32, 0.6) !important;
+  font-size: 0.7rem !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--saffron) !important;
+}
+
+.leaflet-control-zoom a {
+  background: #2C1810 !important;
+  color: var(--gold) !important;
+  border-color: var(--gold) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--maroon) !important;
+}
+
+/* ===================================================================
+   BATTLE THEATER
+   =================================================================== */
+
+.battle-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.battle-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.battle-close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 2.4rem;
+  color: var(--gold);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.battle-close:hover {
+  color: var(--saffron);
+  transform: scale(1.2);
+}
+
+.battle-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px var(--shadow-gold);
+  letter-spacing: 0.03em;
+  min-height: 1.5em;
+}
+
+.battle-stage {
+  width: 94%;
+  max-width: 900px;
+  aspect-ratio: 700 / 420;
+  max-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(218, 165, 32, 0.35);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(218, 165, 32, 0.1), inset 0 0 60px rgba(0,0,0,0.3);
+}
+
+.battle-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.battle-narration-bar {
+  width: 94%;
+  max-width: 900px;
+  margin-top: 16px;
+  padding: 18px 28px;
+  background: linear-gradient(135deg, rgba(44, 24, 16, 0.95), rgba(26, 15, 10, 0.95));
+  border: 1px solid rgba(218, 165, 32, 0.4);
+  border-radius: 12px;
+  min-height: 90px;
+}
+
+.battle-narration-text {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--ivory-warm);
+  line-height: 1.75;
+  min-height: 2.8em;
+}
+
+.battle-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.battle-step-indicator {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+.battle-skip {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--gold);
+  background: none;
+  border: 1px solid var(--gold);
+  padding: 6px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.battle-skip:hover {
+  background: var(--gold);
+  color: var(--dark-bg);
+  box-shadow: 0 0 12px var(--shadow-gold);
+}
+
+.battle-done {
+  display: none;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--dark-bg);
+  background: linear-gradient(135deg, var(--gold), var(--saffron-light));
+  border: 1px solid var(--gold-light);
+  padding: 8px 22px;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.battle-done:hover {
+  box-shadow: 0 0 16px var(--shadow-gold);
+  transform: scale(1.03);
+}
+
+.battle-overlay.battle-at-end .battle-step-indicator,
+.battle-overlay.battle-at-end .battle-skip {
+  display: none !important;
+}
+
+.battle-overlay.battle-at-end .battle-controls {
+  justify-content: flex-end;
+}
+
+.battle-overlay.battle-at-end .battle-done {
+  display: inline-block;
+}
+
+/* Watch Battle Button */
+
+.encyclopedia-actions {
+  text-align: center;
+  margin: 16px 0 8px;
+}
+
+.btn-watch-battle {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--ivory);
+  background: linear-gradient(135deg, var(--deep-red), var(--maroon));
+  border: 1px solid var(--gold);
+  padding: 10px 28px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-watch-battle:hover {
+  background: linear-gradient(135deg, #a00000, var(--deep-red));
+  box-shadow: 0 0 20px var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+/* ===================================================================
+   QUEST MODE
+   =================================================================== */
+
+.btn-quest {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  margin-bottom: 12px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--ivory);
+  background: linear-gradient(135deg, #1A237E, #283593);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.btn-quest:hover {
+  box-shadow: 0 0 20px var(--shadow-gold);
+  transform: translateY(-1px);
+}
+
+.btn-quest-exit {
+  background: linear-gradient(135deg, #4A1810, #2C1810);
+  border-color: rgba(218, 165, 32, 0.5);
+  font-size: 0.8rem;
+}
+
+.quest-panel {
+  margin-bottom: 14px;
+}
+
+.quest-xp-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(218, 165, 32, 0.15);
+  border: 1px solid rgba(218, 165, 32, 0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.quest-xp-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--saffron), var(--gold));
+  border-radius: 6px;
+  transition: width 0.8s ease;
+  box-shadow: 0 0 8px var(--shadow-gold);
+}
+
+.quest-xp-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  color: var(--gold);
+  text-align: right;
+  margin-bottom: 6px;
+}
+
+.quest-demon-count {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  color: var(--saffron-light);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Timeline Quest States */
+
+.timeline-item.quest-locked {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.timeline-item.quest-locked::before {
+  background: #555;
+  border-color: #666;
+}
+
+.timeline-item.quest-locked .timeline-item-name::after {
+  content: ' \1F512';
+  font-size: 0.7rem;
+}
+
+.timeline-item.quest-completed::before {
+  background: #4CAF50;
+  border-color: #66BB6A;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+.timeline-item.quest-completed .timeline-item-name::after {
+  content: ' \2714';
+  color: #4CAF50;
+  font-size: 0.7rem;
+}
+
+.timeline-item.quest-current::before {
+  animation: questCurrentPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes questCurrentPulse {
+  0%, 100% { box-shadow: 0 0 4px var(--shadow-gold); transform: scale(1); }
+  50%      { box-shadow: 0 0 16px var(--gold); transform: scale(1.3); }
+}
+
+.quest-complete-flash {
+  animation: questFlash 1.5s ease-out;
+}
+
+@keyframes questFlash {
+  0%   { background: rgba(218, 165, 32, 0.5); }
+  100% { background: transparent; }
+}
+
+/* Locked Markers */
+
+.marker-locked .chakra-marker svg {
+  opacity: 0.25;
+  animation: none;
+  filter: grayscale(1);
+}
+
+.marker-locked .marker-pulse {
+  display: none;
+}
+
+/* ===================================================================
+   VICTORY SCREEN
+   =================================================================== */
+
+.victory-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.victory-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.victory-card {
+  position: relative;
+  text-align: center;
+  padding: 40px 50px;
+  background: linear-gradient(160deg, #2C1810, #1a0f0a, #2C1810);
+  border: 2px solid var(--gold);
+  border-radius: 20px;
+  box-shadow: 0 0 60px var(--shadow-gold), 0 20px 60px var(--shadow-dark);
+  max-width: 500px;
+  width: 90%;
+  animation: victoryCardPop 0.6s ease-out;
+}
+
+@keyframes victoryCardPop {
+  0%   { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.victory-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.8rem;
+  color: var(--gold);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.victory-chakra-container {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 16px;
+}
+
+.victory-chakra-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.vc-spin {
+  animation: vcSpinAnim 4s linear infinite;
+  transform-origin: 100px 100px;
+}
+
+@keyframes vcSpinAnim {
+  from { transform: translate(100,100) rotate(0deg); }
+  to   { transform: translate(100,100) rotate(360deg); }
+}
+
+.victory-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--gold);
+  text-shadow: 0 0 30px var(--shadow-gold);
+  margin-bottom: 8px;
+}
+
+.victory-subtitle {
+  font-family: var(--font-body);
+  color: var(--saffron-light);
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+.victory-xp {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--saffron);
+  margin-bottom: 16px;
+}
+
+/* ===================================================================
+   DIVINE FORMS GALLERY
+   =================================================================== */
+
+.header-actions {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Language switcher */
+.lang-switcher {
+  display: flex;
+  gap: 3px;
+  background: rgba(26, 15, 10, 0.6);
+  border: 1px solid rgba(218, 165, 32, 0.3);
+  border-radius: 16px;
+  padding: 2px;
+}
+
+.lang-btn {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: rgba(218, 165, 32, 0.7);
+  background: transparent;
+  border: none;
+  padding: 3px 9px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.25s;
+  line-height: 1.4;
+}
+
+.lang-btn:hover {
+  color: var(--gold);
+  background: rgba(128, 0, 0, 0.35);
+}
+
+.lang-btn.is-active {
+  color: var(--ivory-warm);
+  background: rgba(128, 0, 0, 0.7);
+  border: 1px solid var(--gold);
+}
+
+.header-btn {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--gold);
+  background: rgba(128, 0, 0, 0.6);
+  border: 1px solid var(--gold);
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 5;
+}
+
+.header-btn:hover {
+  background: var(--maroon);
+  box-shadow: 0 0 14px var(--shadow-gold);
+}
+
+#btnHeaderQuest {
+  background: linear-gradient(135deg, #1A237E, #283593);
+}
+
+#btnHeaderQuest:hover {
+  background: linear-gradient(135deg, #283593, #3949AB);
+  box-shadow: 0 0 14px rgba(100, 120, 255, 0.4);
+}
+
+.forms-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(4px);
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.forms-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.forms-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px 24px;
+  position: relative;
+}
+
+.forms-close {
+  position: fixed;
+  top: 16px;
+  right: 24px;
+  font-size: 2.2rem;
+  color: var(--gold);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.forms-close:hover {
+  color: var(--saffron);
+  transform: scale(1.2);
+}
+
+.forms-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold);
+  text-align: center;
+  text-shadow: 0 0 20px var(--shadow-gold);
+  margin-bottom: 8px;
+}
+
+.forms-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--saffron-light);
+  text-align: center;
+  opacity: 0.75;
+  max-width: 600px;
+  margin: 0 auto 8px;
+  font-style: italic;
+}
+
+/* Tabbed sacred galleries (inside #formsGallery) */
+
+.gallery-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  justify-content: center;
+  margin: 12px 0 20px;
+}
+
+.gallery-tab {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  color: var(--gold);
+  background: rgba(26, 15, 10, 0.65);
+  border: 1px solid rgba(218, 165, 32, 0.45);
+  border-radius: 22px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: color 0.25s, background 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.gallery-tab:hover {
+  color: var(--saffron-light);
+  border-color: var(--saffron);
+  box-shadow: 0 0 12px rgba(218, 165, 32, 0.2);
+}
+
+.gallery-tab.is-active {
+  color: var(--dark-bg);
+  background: linear-gradient(135deg, var(--gold), var(--saffron-light));
+  border-color: var(--gold-light);
+  box-shadow: 0 0 16px var(--shadow-gold);
+}
+
+.gallery-panel {
+  display: none;
+}
+
+.gallery-panel.is-active {
+  display: block;
+}
+
+.forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.gallery-panel.is-active .forms-grid {
+  margin-top: 0;
+}
+
+.form-card {
+  background: linear-gradient(160deg, #2C1810, #1a0f0a);
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  padding: 0 0 20px 0;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: formCardIn 0.5s ease-out forwards;
+  overflow: hidden;
+}
+
+.form-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 24px var(--shadow-gold);
+}
+
+.form-card-art {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.form-art-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.form-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.form-card-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  border: 2px solid;
+}
+
+.form-card-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--gold);
+  margin-bottom: 2px;
+  padding: 0 20px;
+}
+
+.form-card-sanskrit {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--saffron-light);
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.form-card-subtitle {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  color: var(--saffron);
+  margin-bottom: 10px;
+}
+
+.form-card-desc {
+  font-size: 0.88rem;
+  color: rgba(255, 248, 231, 0.75);
+  line-height: 1.6;
+  margin-bottom: 12px;
+  padding: 0 20px;
+}
+
+.form-card-link {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--gold);
+  background: none;
+  border: 1px solid rgba(218, 165, 32, 0.5);
+  padding: 4px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form-card-link:hover {
+  background: var(--gold);
+  color: var(--dark-bg);
+}
+
+@keyframes formCardIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================================================================
+   FULLSCREEN IMAGE LIGHTBOX
+   =================================================================== */
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 4500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 20px 28px;
+  background: rgba(10, 6, 4, 0.94);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.image-lightbox.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.image-lightbox-inner {
+  max-width: min(96vw, 1200px);
+  max-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  pointer-events: none;
+}
+
+.image-lightbox-inner img {
+  max-width: 100%;
+  max-height: calc(100vh - 200px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 2px solid rgba(218, 165, 32, 0.35);
+  box-shadow:
+    0 0 32px var(--shadow-gold),
+    0 16px 48px var(--shadow-dark);
+  pointer-events: auto;
+}
+
+.image-lightbox-caption {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
+  color: var(--gold);
+  text-align: center;
+  max-width: 52rem;
+  line-height: 1.55;
+  font-style: italic;
+  margin: 0;
+  padding: 0 12px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+  pointer-events: auto;
+}
+
+.image-lightbox-close {
+  position: fixed;
+  top: 14px;
+  right: 20px;
+  z-index: 4510;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--gold);
+  background: rgba(26, 15, 10, 0.6);
+  border: 1px solid rgba(218, 165, 32, 0.4);
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: color 0.25s, background 0.25s, transform 0.2s;
+}
+
+.image-lightbox-close:hover {
+  color: var(--saffron);
+  background: rgba(44, 24, 16, 0.85);
+  transform: scale(1.06);
+}
+
+/* ===================================================================
+   RESPONSIVE ADDITIONS
+   =================================================================== */
+
+@media (max-width: 900px) {
+  .header-actions {
+    right: 8px;
+    gap: 6px;
+  }
+
+  .header-btn {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .battle-stage {
+    height: 35vh;
+  }
+
+  .forms-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-actions {
+    top: auto;
+    bottom: 6px;
+    right: 8px;
+    transform: none;
+  }
+
+  .gallery-tab {
+    font-size: 0.72rem;
+    padding: 6px 12px;
+  }
+
+  .header-btn {
+    font-size: 0.65rem;
+  }
+
+  .battle-narration-bar {
+    padding: 12px 16px;
+  }
+
+  .battle-narration-text {
+    font-size: 0.9rem;
+  }
+
+  .lang-btn {
+    font-size: 0.65rem;
+    padding: 2px 7px;
+  }
+}
+
+/* Hindi-specific line-height for Devanagari readability */
+html[lang="hi"] body {
+  line-height: 1.9;
+}
+
+html[lang="hi"] .popup-summary,
+html[lang="hi"] .encyclopedia-body,
+html[lang="hi"] .form-card-desc,
+html[lang="hi"] .battle-narration-text {
+  line-height: 2;
+}

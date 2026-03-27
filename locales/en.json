@@ -1,0 +1,474 @@
+{
+  "ui": {
+    "siteTitle": "Travels of Shri Krishna",
+    "siteSubtitle": "A Chronicle of Divine Pastimes & Demon Battles",
+    "metaDesc": "An interactive map of Lord Krishna's travels across ancient India, chronicling the demons He defeated and the divine pastimes at each sacred location.",
+    "questMode": "Quest Mode",
+    "exitQuest": "Exit Quest",
+    "beginQuest": "Begin Quest",
+    "divineForms": "Divine Forms",
+    "journeyTimeline": "Journey Timeline",
+    "showJourneyPath": "Show Journey Path",
+    "hideJourneyPath": "Hide Journey Path",
+    "readFullStory": "Read Full Story",
+    "watchBattle": "Watch Battle",
+    "skipToEnd": "Skip to End",
+    "continueBattle": "Continue",
+    "continueExploring": "Continue Exploring",
+    "allDemonsVanquished": "All Demons Vanquished!",
+    "victorySubtitle": "The divine journey of Shri Krishna is complete.",
+    "xpEarned": "{xp} XP Earned",
+    "xpLabel": "{xp} / {max} XP",
+    "demonsVanquished": "Demons Vanquished: {n} / {total}",
+    "demonVanquished": "Demon Vanquished",
+    "battleTheater": "Battle Theater",
+    "battleWon": "The battle is won.",
+    "goTo": "Go to {name}",
+    "source": "Source: Srimad Bhagavatam & Mahabharata",
+    "tabKrishna": "Krishna's forms",
+    "tabAvatars": "Divine avatars",
+    "tabDeities": "Hindu deities",
+    "galTitleKrishna": "Krishna's līlā forms",
+    "galSubKrishna": "The playful and royal manifestations celebrated on this journey map.",
+    "galTitleAvatars": "Divine avatars",
+    "galSubAvatars": "The ten principal descents (daśāvatāra) named in many Puranic lists. Some traditions substitute Balarāma for Buddha.",
+    "galTitleDeities": "Hindu deities",
+    "galSubDeities": "Principal devas and devis honored across Hindu traditions—each a window into the one infinite reality.",
+    "toggleTimeline": "Toggle timeline",
+    "artworkViewer": "Artwork viewer",
+    "closeArtwork": "Close artwork",
+    "gallerySections": "Gallery sections"
+  },
+  "content": {
+    "locations": {
+      "1": {
+        "name": "Mathura",
+        "subtitle": "The Sacred Birthplace",
+        "demon": "Birth of Krishna & Slaying of Kamsa",
+        "demonSanskrit": "कंसवध",
+        "summary": "The holy city where Krishna was born in the prison of King Kamsa, and where He later returned to slay the tyrant.",
+        "fullStory": "<p>Mathura, the ancient city on the banks of the Yamuna, holds the most sacred of all events — the birth of Lord Krishna. On the eighth day of the dark fortnight of the month of Shravana, amidst thunderstorms and cosmic upheaval, Krishna appeared in the prison cell of King Kamsa as the eighth son of Devaki and Vasudeva.</p>\n\n<p>Kamsa, the tyrannical king of the Bhoja dynasty, had been warned by a divine prophecy that Devaki's eighth child would be his destroyer. Consumed by fear, he had imprisoned both Devaki and Vasudeva and killed six of their newborn sons. The seventh child, Balarama, was mystically transferred to the womb of Rohini in Gokul.</p>\n\n<p>When Krishna appeared, the prison guards fell into deep slumber, the chains broke, and the gates opened of their own accord. Vasudeva carried the newborn across the flooding Yamuna to Gokul, where he exchanged the child with the newborn daughter of Yashoda and Nanda Maharaja. This daughter, Yogamaya, when seized by Kamsa, slipped from his hands and ascended to the sky, warning him that his destroyer had already been born.</p>\n\n<p class=\"story-section-title\">The Return to Mathura</p>\n\n<p>Years later, Krishna and Balarama were invited to Mathura by Kamsa, who planned to kill them through a series of traps. Upon entering the city, Krishna broke the great sacrificial bow of Shiva, alarming Kamsa. In the wrestling arena, Krishna first defeated the mighty elephant Kuvalayapida that was set upon them at the gate. Then He faced and vanquished the champion wrestlers Chanura and Mushtika, who fought on Kamsa's behalf.</p>\n\n<p>Finally, Krishna leaped onto the royal dais, seized Kamsa by his hair, and dragged him to the arena floor. With a single blow, He ended the reign of the tyrant. Krishna then freed His parents and restored Kamsa's father, King Ugrasena, to the throne. The city of Mathura rejoiced, and dharma was restored.</p>",
+        "battleNarrations": [
+          "In the wrestling arena of Mathura, the tyrant Kamsa watches from his throne as his champions prepare to destroy the young cowherd.",
+          "The mighty elephant Kuvalayapida charges at Krishna, but the boy seizes its tusks and hurls the beast aside like a toy.",
+          "Krishna enters the arena. The wrestlers Chanura and Mushtika attack — but Krishna and Balarama dispatch them with devastating blows.",
+          "Krishna leaps onto the royal dais, seizes Kamsa by the hair, and drags the tyrant to the arena floor.",
+          "With a single mighty blow, Krishna ends the reign of Kamsa. The chains of Devaki and Vasudeva shatter. Dharma is restored!"
+        ]
+      },
+      "2": {
+        "name": "Gokul",
+        "subtitle": "The Pastoral Sanctuary",
+        "demon": "Putana, Trinavarta & Shakatasura",
+        "demonSanskrit": "पूतना · तृणावर्त · शकटासुर",
+        "summary": "Where infant Krishna was raised in secret and defeated three fearsome demons sent by Kamsa during His earliest days.",
+        "fullStory": "<p>Gokul, the simple cowherd village across the Yamuna from Mathura, became the sanctuary where baby Krishna was secretly raised by Nanda Maharaja and Mother Yashoda. But Kamsa, learning that the child who would destroy him had been spirited away, sent a series of demons to find and kill the divine infant.</p>\n\n<p class=\"story-section-title\">Putana — The Poisonous Demoness</p>\n\n<p>The first to come was Putana, a fearsome Rakshasi who could assume any form at will. Disguising herself as a beautiful and charming woman, she entered Gokul and approached baby Krishna, offering to nurse Him. She had smeared deadly poison on her breasts. But when infant Krishna suckled, He drew not only the poison but her very life force. Putana assumed her horrific true form — a gigantic demoness — and fell dead, her body stretching across the fields. The cowherd women, finding baby Krishna playfully crawling on her body, scooped Him up in relief. Despite her murderous intent, because she had offered her breast to the Supreme Lord, Putana was granted liberation.</p>\n\n<p class=\"story-section-title\">Shakatasura — The Cart Demon</p>\n\n<p>When Krishna was only a few months old, Yashoda placed Him beneath a large wooden cart during a celebration. The demon Shakatasura entered the cart, making it loom threateningly over the infant. Baby Krishna, with one small kick of His lotus feet, shattered the massive cart into pieces, sending its contents flying in all directions. The cowherd folk were astonished, unable to comprehend how an infant could possess such extraordinary power.</p>\n\n<p class=\"story-section-title\">Trinavarta — The Whirlwind Demon</p>\n\n<p>Kamsa next sent Trinavarta, a demon who could assume the form of a devastating whirlwind. The demon swept through Gokul, creating a terrible dust storm that blinded everyone, and snatched baby Krishna into the sky. But as Trinavarta ascended, the child became impossibly heavy — heavier than a mountain. The demon could not bear the weight and, unable to release the child who had seized his throat, Trinavarta crashed to the earth and perished. Baby Krishna was found sitting peacefully on the demon's chest.</p>",
+        "battleNarrations": [
+          "The demoness Putana, disguised as a beautiful woman, enters Gokul and approaches baby Krishna with poisoned breasts.",
+          "Baby Krishna suckles fearlessly — drawing not just the poison but Putana's very life force from her body.",
+          "Putana screams, revealing her monstrous true form. She collapses, her gigantic body stretching across the fields.",
+          "The whirlwind demon Trinavarta snatches Krishna into the sky — but the child becomes heavier than a mountain!",
+          "Trinavarta crashes to earth, unable to bear the divine weight. Baby Krishna sits peacefully upon the fallen demon."
+        ]
+      },
+      "3": {
+        "name": "Vrindavan",
+        "subtitle": "The Forest of Divine Play",
+        "demon": "Bakasura, Aghasura, Kaliya, Keshi & Vyomasura",
+        "demonSanskrit": "बकासुर · अघासुर · कालिय · केशी · व्योमासुर",
+        "summary": "The enchanted forest where cowherd boy Krishna vanquished five mighty demons while tending the cows with His friends.",
+        "fullStory": "<p>Vrindavan, the forest of Tulasi groves along the winding Yamuna, was the stage for Krishna's most beloved childhood pastimes. Here, as a young cowherd boy, He would venture into the forests with His friends and the calves, and here the demons of Kamsa met their end in extraordinary ways.</p>\n\n<p class=\"story-section-title\">Bakasura — The Crane Demon</p>\n\n<p>While the cowherd boys were playing near a lake, the monstrous crane demon Bakasura appeared. Enormous in size, with a beak like two mountain peaks, he swallowed Krishna whole. But within the demon's throat, Krishna became so scorching hot that Bakasura was forced to spit Him out. As the demon lunged again with his massive beak, Krishna seized both halves and tore him apart with the ease of splitting a blade of grass. The demigods showered flowers from the heavens.</p>\n\n<p class=\"story-section-title\">Aghasura — The Serpent Demon</p>\n\n<p>Aghasura, the brother of Putana and Bakasura, assumed the form of a colossal python, stretching his body across a mountain pass with his mouth gaping like a cavern. The innocent cowherd boys, thinking it a natural cave, walked straight into his mouth. Krishna, understanding the peril, entered last. Inside the demon's body, He expanded Himself until Aghasura suffocated and his life force departed through the top of his skull as a brilliant light, which merged into Krishna — granting him liberation.</p>\n\n<p class=\"story-section-title\">Kaliya — The Serpent of the Yamuna</p>\n\n<p>The most dramatic of Vrindavan's pastimes was the subduing of Kaliya, a great multi-hooded serpent who had poisoned the waters of the Yamuna. The river boiled with venom; birds flying overhead fell dead from the fumes. Krishna dove into the deadly pool and, after a fierce struggle, danced upon Kaliya's many hoods, His lotus feet striking with the weight of the entire universe. Kaliya's wives, the Nagapatnis, prayed for mercy, and Krishna, ever compassionate, spared the serpent on the condition that he leave the Yamuna and return to the ocean. The waters of the Yamuna were purified, and the land was restored to life.</p>\n\n<p class=\"story-section-title\">Keshi — The Horse Demon</p>\n\n<p>Keshi arrived in Vrindavan in the form of a terrifying horse of enormous proportions, his hooves tearing up the earth and his neighing shattering the sky. He charged at Krishna with his mouth open wide. Krishna thrust His left arm into the demon's mouth, and the arm expanded like a red-hot iron rod. Keshi's teeth shattered, and the arm swelled within him until the demon split apart and fell lifeless. It was after this victory that the sage Narada bestowed upon Krishna the name \"Keshava\" — the slayer of Keshi.</p>\n\n<p class=\"story-section-title\">Vyomasura — The Sky Demon</p>\n\n<p>Vyomasura, a son of the demon Maya, infiltrated the cowherd boys' games by disguising himself as one of them. During a game of \"cops and robbers,\" he began secretly abducting the boys playing the role of \"cattle\" and hiding them in a mountain cave. When Krishna realized that many of His friends had vanished, He seized Vyomasura, who revealed his massive demonic form. Krishna wrestled him to the ground and slew him, then freed all the captured boys from the cave.</p>",
+        "battleNarrations": [
+          "The great serpent Kaliya poisons the Yamuna river. Birds fall dead from the toxic fumes. Krishna dives into the deadly pool.",
+          "Kaliya coils around Krishna with crushing force, his many hoods hissing venom. The cowherd boys cry out in terror.",
+          "Krishna expands His body, breaking free of the coils! He leaps atop the serpent's central hood.",
+          "Krishna dances upon Kaliya's hoods — each step striking with the weight of the entire universe. The serpent begins to submit.",
+          "Kaliya's wives pray for mercy. Krishna, ever compassionate, spares the serpent and banishes him to the ocean. The Yamuna is purified!"
+        ]
+      },
+      "4": {
+        "name": "Talavana",
+        "subtitle": "The Palm Forest",
+        "demon": "Dhenukasura — The Donkey Demon",
+        "demonSanskrit": "धेनुकासुर",
+        "summary": "A forbidden palm grove guarded by a ferocious donkey demon, liberated by Krishna and Balarama.",
+        "fullStory": "<p>Talavana, the lush palm forest near Vrindavan, was filled with ripe Tala fruits whose fragrance wafted throughout the region. Yet no one dared enter, for the forest was guarded by the terrible demon Dhenukasura, who had assumed the form of a wild donkey of immense strength, along with his herd of demonic followers.</p>\n\n<p>The cowherd boys, enticed by the sweet smell of the ripe palm fruits, told Krishna and Balarama about the forbidden forest. The two brothers, fearless and eager to please Their friends, led everyone to Talavana. Balarama shook the palm trees, causing a rain of delicious fruits.</p>\n\n<p>The sound drew out Dhenukasura in a fury. The demon charged at Balarama, turning around to deliver devastating kicks with his powerful hind legs. Balarama calmly caught the demon's legs, whirled him around with one hand, and hurled him into the top of a palm tree with such force that the demon perished and the tree was uprooted. One by one, the remaining donkey demons attacked and were similarly dispatched by Krishna and Balarama, their bodies breaking the palm trees as they were flung skyward.</p>\n\n<p>With Dhenukasura destroyed, Talavana became a place of beauty and abundance, and the cowherd community could freely enjoy its fruits. The forest, once a place of terror, became another playground for Krishna's divine pastimes.</p>",
+        "battleNarrations": [
+          "Balarama shakes the palm trees of Talavana. The sound of falling fruits draws out the furious demon Dhenukasura.",
+          "The donkey demon kicks with devastating force! Balarama catches its hind legs with one hand.",
+          "Balarama whirls Dhenukasura overhead and hurls him into a palm tree with such force that both shatter!",
+          "The remaining donkey demons charge in a herd. Krishna and Balarama dispatch them all, their bodies breaking the trees."
+        ]
+      },
+      "5": {
+        "name": "Govardhana Hill",
+        "subtitle": "The Sacred Mountain",
+        "demon": "Defiance of Indra's Wrath",
+        "demonSanskrit": "गोवर्धन लीला",
+        "summary": "Where young Krishna lifted an entire mountain on His little finger for seven days to shelter Vrindavan from Indra's devastating storm.",
+        "fullStory": "<p>The lifting of Govardhana Hill stands among the most celebrated of all Krishna's pastimes, a demonstration of divine power that humbled the king of the celestials himself.</p>\n\n<p>Each year, the people of Vrindavan performed a grand yajna (sacrifice) in honor of Indra, the king of the demigods and lord of rain. Young Krishna, however, questioned this tradition. He argued that the people's livelihood depended not on Indra but on the land, the cows, and Govardhana Hill — which provided pastures, water, herbs, and shelter. He persuaded Nanda Maharaja and the cowherd community to redirect their worship to Govardhana Hill instead.</p>\n\n<p>Indra, enraged by what he saw as insolence, summoned the most devastating clouds of cosmic destruction — the Samvartaka clouds, which are unleashed only at the time of universal annihilation. Torrential rains, hailstones, and violent winds lashed Vrindavan without mercy. Rivers flooded, and the people and animals faced certain destruction.</p>\n\n<p>Krishna, then a boy of seven years, calmly walked to Govardhana Hill and lifted the entire mountain upon the little finger of His left hand, as effortlessly as a child picks up a mushroom. He held it aloft like a vast umbrella, and all the residents of Vrindavan — men, women, children, and animals — took shelter beneath it. For seven days and seven nights, Krishna stood motionless, holding the hill, while Indra poured his full fury upon them to no avail.</p>\n\n<p>At last, humbled and ashamed, Indra withdrew the storm clouds and descended from his celestial abode. Accompanied by Surabhi, the divine cow, he approached Krishna and offered prayers of repentance. He performed an abhisheka (ceremonial bathing) of Krishna and acknowledged His supreme position. Krishna gently set the hill back in its place, and the people of Vrindavan, overflowing with love and gratitude, celebrated the victory with great festivity.</p>\n\n<p>To this day, the circumambulation of Govardhana Hill (Govardhan Parikrama) remains one of the most cherished pilgrimages in the Vaishnava tradition.</p>",
+        "battleNarrations": [
+          "Indra, king of the gods, enraged by Krishna's defiance, unleashes the apocalyptic Samvartaka storm clouds upon Vrindavan.",
+          "Torrential rain, hailstones and violent winds lash the village. Rivers flood. The people cry out in despair.",
+          "Seven-year-old Krishna calmly walks to Govardhana Hill and lifts the entire mountain on the little finger of His left hand!",
+          "For seven days and nights, Krishna holds the hill aloft like a vast umbrella. All of Vrindavan takes shelter beneath it.",
+          "Indra, humbled and ashamed, withdraws his storm. He descends and offers prayers of repentance to the Supreme Lord."
+        ]
+      },
+      "6": {
+        "name": "Dwaraka",
+        "subtitle": "The Golden City in the Sea",
+        "demon": "Shalva & the Flying City of Saubha",
+        "demonSanskrit": "शाल्ववध · सौभनगर",
+        "summary": "Krishna's magnificent island kingdom in the western sea, which withstood the aerial assault of the demon king Shalva.",
+        "fullStory": "<p>After the events in Mathura, and facing repeated attacks from Jarasandha's armies, Krishna made the momentous decision to establish a new kingdom far to the west. Through His divine power, He had the celestial architect Vishwakarma construct the magnificent city of Dwaraka — a golden metropolis built upon an island in the western sea, complete with crystal palaces, jeweled gardens, wide boulevards, and impregnable fortifications.</p>\n\n<p>Dwaraka became the seat of Krishna's kingdom, from which He governed with wisdom and justice as the king of the Yadavas. The city was so splendid that it rivaled the capital of Indra himself.</p>\n\n<p class=\"story-section-title\">The Attack of Shalva</p>\n\n<p>King Shalva, a friend of Shishupala, had vowed to destroy Dwaraka to avenge Shishupala's death. Through severe penances to Lord Shiva, he obtained the Saubha — a massive flying city forged of iron, capable of becoming invisible and raining destruction from the skies.</p>\n\n<p>Shalva attacked Dwaraka while Krishna was away at Indraprastha. The flying fortress rained boulders, serpents, storms, and weapons upon the city. The Yadava warriors, led by Pradyumna (Krishna's son), mounted a fierce defense but could not bring down the airborne citadel. Pradyumna was struck unconscious by Shalva's commander Dyuman, though he recovered and continued fighting.</p>\n\n<p>When Krishna returned and saw the devastation, He engaged Shalva directly. The battle was intense — Shalva employed illusions, at one point projecting a false image of Vasudeva (Krishna's father) being beheaded. For a moment, even Krishna appeared moved, but He quickly recognized the maya (illusion) for what it was. With His Sudarshana Chakra, Krishna destroyed the Saubha fortress and then slew Shalva, ending the aerial terror once and for all.</p>",
+        "battleNarrations": [
+          "The iron flying fortress Saubha appears over Dwaraka, raining boulders and serpents upon the golden city.",
+          "Shalva projects an illusion of Vasudeva's severed head. For a moment, even Krishna is moved — then recognizes the maya.",
+          "Krishna mounts His chariot and unleashes a volley of divine arrows at the flying citadel, piercing its defenses.",
+          "The Sudarshana Chakra blazes forth and shatters the Saubha fortress! Shalva falls from the sky."
+        ]
+      },
+      "7": {
+        "name": "Rajgir",
+        "subtitle": "Fortress of the Magadha Empire",
+        "demon": "Jarasandha — The Unkillable King",
+        "demonSanskrit": "जरासन्धवध",
+        "summary": "The mountain-ringed capital where Jarasandha, who attacked Mathura seventeen times, was finally slain through Krishna's divine strategy.",
+        "fullStory": "<p>Rajgir (Rajagriha), the ancient capital of the Magadha kingdom, was a fortress city encircled by five hills, and it was the seat of the most formidable enemy Krishna ever faced through conventional warfare — King Jarasandha.</p>\n\n<p>Jarasandha was the father-in-law of Kamsa. When Krishna slew Kamsa, Jarasandha swore vengeance. He assembled the largest armies the world had ever seen — including forces from vassal kings across the subcontinent — and attacked Mathura not once, not twice, but seventeen times. Each time, Krishna and Balarama defeated his armies, but Jarasandha himself could not be killed, for he had been born in two halves that were magically joined together by the demoness Jara, making him nearly invincible.</p>\n\n<p>It was partly to protect the people of Mathura from these relentless assaults that Krishna relocated His kingdom to the island fortress of Dwaraka. But the threat of Jarasandha remained — he had imprisoned 20,800 kings in his dungeons, planning a massive human sacrifice.</p>\n\n<p class=\"story-section-title\">The Strategic Duel</p>\n\n<p>When Yudhishthira wished to perform the Rajasuya sacrifice, Krishna knew that Jarasandha had to be eliminated first, for no king could claim universal sovereignty while Jarasandha lived. Rather than wage all-out war, Krishna devised a brilliant strategy: He, Bhima, and Arjuna would go to Rajgir disguised as Brahmanas seeking charity.</p>\n\n<p>Jarasandha, bound by his vow to never refuse a Brahmana's request, agreed to a wrestling duel with Bhima. The two fought for twenty-seven days without rest, evenly matched in strength. Bhima grew frustrated — each time he tore Jarasandha's body apart, the halves would rejoin and the king would rise again.</p>\n\n<p>Krishna, watching from the sidelines, picked up a twig and split it in two, then threw each half in opposite directions. Bhima understood the signal: he tore Jarasandha in half and threw the two halves in opposite directions so they could not rejoin. The unkillable king finally fell. Krishna then freed all the imprisoned monarchs, who became devoted allies of the Pandavas.</p>",
+        "battleNarrations": [
+          "Disguised as Brahmanas, Krishna, Bhima, and Arjuna enter the fortress of Rajgir to challenge the unkillable Jarasandha.",
+          "Bhima and Jarasandha lock in a titanic wrestling match that rages for twenty-seven days without rest.",
+          "Each time Bhima tears Jarasandha apart, the halves magically rejoin! Bhima grows frustrated.",
+          "Krishna picks up a twig, splits it in two, and throws the halves in opposite directions — the signal!",
+          "Bhima tears Jarasandha in half and hurls the pieces apart — they cannot rejoin! The unkillable king finally falls."
+        ]
+      },
+      "8": {
+        "name": "Pragjyotishpura",
+        "subtitle": "City of Eastern Sorcery",
+        "demon": "Narakasura & Mura",
+        "demonSanskrit": "नरकासुरवध · मुरवध",
+        "summary": "The eastern demon stronghold where Krishna earned the name 'Murari' by slaying the five-headed demon Mura, and then defeated the tyrant Narakasura.",
+        "fullStory": "<p>Pragjyotishpura (modern-day Tezpur in Assam) was the capital of the demon king Narakasura (also known as Bhaumasura, the son of the Earth goddess Bhumi). Despite his divine parentage, Narakasura had become a terror to the three worlds. He had defeated Indra, stolen the earrings of Aditi (the mother of the gods), seized Indra's royal canopy and the sacred mountain Maniparvata, and abducted 16,100 princesses whom he held captive in his fortress.</p>\n\n<p class=\"story-section-title\">The Demon Mura</p>\n\n<p>Pragjyotishpura was guarded by elaborate defenses — mountains, weapons of fire, water, wind, and an impenetrable noose of Mura. Mura was a fearsome five-headed demon who served as Narakasura's chief guardian. He wielded a devastating trident and could fight with superhuman ferocity.</p>\n\n<p>Krishna, riding the divine eagle Garuda with Satyabhama at His side, systematically destroyed each layer of defense. When Mura rose from the depths to attack, unleashing a shower of weapons from his five mouths, Krishna calmly dispatched him with His Sudarshana Chakra, severing all five heads in a single blazing arc. It was this victory that earned Krishna the celebrated name \"Murari\" — the enemy of Mura.</p>\n\n<p class=\"story-section-title\">The Fall of Narakasura</p>\n\n<p>Mura's seven sons attacked in a rage but were all destroyed. Finally, Narakasura himself emerged, mounted on his war elephant and wielding the divine lance Shakti. The battle shook the earth. Narakasura hurled his Shakti lance at Krishna, but the Lord destroyed it mid-flight. Riding Garuda, Krishna unleashed a volley of divine arrows and finally dispatched the demon king with His Sudarshana Chakra.</p>\n\n<p>Before dying, Narakasura, humbled at last, requested that the day of his death be celebrated with joy. This day is commemorated as Naraka Chaturdashi, the day before Diwali. Krishna freed all 16,100 captive princesses, and at their request, married each one of them, restoring their honor and dignity. He returned Aditi's earrings and Indra's canopy to their rightful owners.</p>",
+        "battleNarrations": [
+          "Riding the divine eagle Garuda, Krishna approaches Pragjyotishpura and destroys its layered defenses one by one.",
+          "The five-headed demon Mura rises from the depths, unleashing weapons from all five mouths!",
+          "The Sudarshana Chakra blazes in a great arc, severing all five of Mura's heads in a single throw! Krishna earns the name Murari.",
+          "Narakasura charges on his war elephant, hurling the divine Shakti lance. Krishna destroys it mid-flight.",
+          "With the Sudarshana Chakra, Krishna dispatches Narakasura. 16,100 captive princesses are freed!"
+        ]
+      },
+      "9": {
+        "name": "Shonitpur",
+        "subtitle": "City of Blood",
+        "demon": "Banasura — The Thousand-Armed Demon",
+        "demonSanskrit": "बाणासुरवध",
+        "summary": "Where Krishna battled the thousand-armed devotee of Shiva and even faced Lord Shiva Himself in combat.",
+        "fullStory": "<p>Shonitpur (also in the Tezpur region) was the capital of Banasura, a powerful Asura king with one thousand arms. Banasura was the son of the great King Bali and a devoted worshipper of Lord Shiva. So pleased was Shiva with Banasura's devotion that he served as the personal guardian of Banasura's city, and Shiva's bull Nandi guarded the gates.</p>\n\n<p>Banasura had a beautiful daughter named Usha, who fell in love with Krishna's grandson Aniruddha after seeing him in a dream. With the help of her friend Chitralekha, a skilled artist and mystic who could identify any person from a drawing, Usha had Aniruddha magically transported to her chambers. When Banasura discovered this, he was enraged and captured Aniruddha, binding him with serpent ropes.</p>\n\n<p class=\"story-section-title\">War Against the Gods</p>\n\n<p>When Krishna learned that His grandson had been captured, He marshaled the Yadava army and marched on Shonitpur. What followed was one of the most extraordinary battles in Hindu scripture — a war in which mortal, demon, and god fought on the same battlefield.</p>\n\n<p>Lord Shiva himself rode out to defend Banasura, accompanied by his son Kartikeya and the Shiva-ganas (attendants). Krishna and Shiva engaged in direct combat — a battle between the Supreme Personality of Godhead and the Great Destroyer that caused the universe to tremble. Krishna neutralized Shiva's divine weapons one by one: when Shiva unleashed the Shiva-jvara (the fever weapon), Krishna countered with the Vishnu-jvara. Eventually, Shiva, exhausted, withdrew.</p>\n\n<p>Krishna then turned to Banasura and methodically severed his thousand arms with His Sudarshana Chakra, leaving only four. When Shiva approached Krishna and interceded on behalf of his devotee, Krishna, honoring Shiva's request, spared Banasura's life and granted him freedom from fear. Aniruddha was freed, and he and Usha were married with blessings from both sides. This episode beautifully demonstrates that even in conflict, the relationship between Vishnu and Shiva is one of mutual love and respect.</p>",
+        "battleNarrations": [
+          "Krishna marches on Shonitpur to rescue His grandson Aniruddha. Lord Shiva himself rides out to defend Banasura.",
+          "Krishna and Shiva engage in direct combat! The Supreme Lord and the Great Destroyer clash, shaking the universe.",
+          "Shiva unleashes the Shiva-jvara fever weapon. Krishna counters with the Vishnu-jvara. Shiva withdraws, exhausted.",
+          "Krishna turns to the thousand-armed Banasura and the Sudarshana Chakra begins its merciless work, severing arms by the hundred.",
+          "At Shiva's intercession, Krishna spares Banasura's life, leaving him with four arms. Aniruddha is freed!"
+        ]
+      },
+      "10": {
+        "name": "Indraprastha",
+        "subtitle": "Capital of the Pandavas",
+        "demon": "Shishupala — The Hundred Offenses",
+        "demonSanskrit": "शिशुपालवध",
+        "summary": "At Yudhishthira's Rajasuya sacrifice, Krishna fulfilled an ancient promise by slaying Shishupala after the hundredth offense.",
+        "fullStory": "<p>Indraprastha, the magnificent capital built by the Pandavas on the banks of the Yamuna (in the region of modern Delhi), was the setting for one of the most dramatic confrontations in the Mahabharata — the slaying of Shishupala at the great Rajasuya sacrifice.</p>\n\n<p>Shishupala, the king of Chedi, was born with three eyes and four arms. A divine voice at his birth had proclaimed that his extra features would disappear when he was placed in the lap of the person destined to kill him — and so it happened when baby Shishupala was placed in Krishna's lap. His mother, Shrutashrava (Krishna's aunt), extracted a promise from Krishna that He would forgive one hundred offenses from Shishupala before taking action.</p>\n\n<p class=\"story-section-title\">The Rajasuya Sacrifice</p>\n\n<p>When Yudhishthira performed the grand Rajasuya yajna to declare his sovereignty, the assembled kings were asked to decide who should receive the first honor (agra-puja). Bhishma, the patriarch, nominated Krishna, and the assembly agreed. This enraged Shishupala, who had long harbored hatred toward Krishna, partly because Krishna had taken Rukmini — whom Shishupala considered his betrothed.</p>\n\n<p>Shishupala rose and delivered a venomous public denunciation of Krishna, hurling insult after insult. He mocked Krishna's birth as a cowherd, questioned His kshatriya status, ridiculed the decision to honor Him, and challenged His divinity. The assembled kings sat in shocked silence as the tirade continued.</p>\n\n<p>Krishna remained seated, calm and smiling, silently counting each offense. When Shishupala uttered his hundredth insult, Krishna simply said, \"Your offenses have reached their limit.\" He released His Sudarshana Chakra, which blazed across the hall like a second sun and severed Shishupala's head. A radiant light emerged from Shishupala's body and merged into Krishna — for Shishupala was actually Jaya, the gatekeeper of Vaikuntha, fulfilling his third and final cursed birth, now liberated forever.</p>",
+        "battleNarrations": [
+          "At the great Rajasuya sacrifice, Shishupala rises and hurls insult after insult at Krishna before the assembled kings.",
+          "Krishna sits calm and smiling, silently counting each offense. The court watches in stunned silence.",
+          "'Your offenses have reached their limit.' Krishna's voice rings through the hall as He raises His hand.",
+          "The Sudarshana Chakra blazes across the hall like a second sun and severs Shishupala's head in one blazing arc!"
+        ]
+      },
+      "11": {
+        "name": "Near Indraprastha",
+        "subtitle": "On the Road from Chedi",
+        "demon": "Dantavakra — The Loyal Avenger",
+        "demonSanskrit": "दन्तवक्रवध",
+        "summary": "Shishupala's loyal friend charged Krishna single-handedly in revenge, armed with only a mace, and met his liberation.",
+        "fullStory": "<p>Dantavakra, the king of Karusha, was a close friend and ally of Shishupala. Upon learning of Shishupala's death at the Rajasuya sacrifice, he was consumed with grief and rage. Unlike other opponents who marshaled vast armies, Dantavakra's fury was so immediate and personal that he charged toward Krishna alone, on foot, armed with nothing but a massive mace.</p>\n\n<p>According to the Bhagavatam, Dantavakra was, like Shishupala, a reincarnation of Vijaya, the second gatekeeper of Vaikuntha. The two gatekeepers, Jaya and Vijaya, had been cursed by the four Kumaras to take three births in the material world as enemies of Vishnu. Their first births were as Hiranyaksha and Hiranyakashipu, their second as Ravana and Kumbhakarna, and their third and final births were as Shishupala and Dantavakra.</p>\n\n<p>When Dantavakra appeared before Krishna, he raised his mace and proclaimed, \"Today I shall repay the debt I owe my friend by killing you!\" He swung his mace at Krishna's head with tremendous force. But Krishna, wielding His own mace Kaumodaki, struck Dantavakra squarely on the chest. The blow shattered Dantavakra's heart, and he fell to the earth, blood flowing from his mouth.</p>\n\n<p>As with Shishupala, a brilliant light emerged from Dantavakra's body and entered into Krishna, signifying the final liberation of Vijaya. The celestial gatekeepers had completed their cursed sojourn in the material world and returned to their eternal posts at the gates of Vaikuntha, never to fall again. Those who witnessed the event marveled at the visible proof that even those who opposed the Lord with hatred attained liberation through their intense, unwavering focus on Him.</p>",
+        "battleNarrations": [
+          "Dantavakra, consumed by grief for Shishupala, charges alone toward Krishna wielding a massive mace.",
+          "'Today I shall repay the debt I owe my friend!' He swings his mace at Krishna's head with tremendous force.",
+          "Krishna raises the divine mace Kaumodaki and strikes Dantavakra squarely on the chest.",
+          "The blow shatters his heart. A brilliant light emerges and merges into Krishna — the gatekeeper Vijaya is liberated forever."
+        ]
+      },
+      "12": {
+        "name": "Kashi (Varanasi)",
+        "subtitle": "City of Light",
+        "demon": "Paundraka — The False Vasudeva",
+        "demonSanskrit": "पौण्ड्रकवध",
+        "summary": "Where a deluded king impersonated Krishna, demanding that the real Krishna surrender His identity — and paid the ultimate price.",
+        "fullStory": "<p>Paundraka Vasudeva was the king of Pundra (Bengal region) who had convinced himself — aided by the flattery of foolish courtiers — that he was the true Vasudeva, the Supreme Personality of Godhead. He dressed himself to imitate Krishna in every detail: he carried an imitation Sudarshana Chakra, a fake Sharnga bow, a mock Kaumodaki mace, wore artificial Kaustubha gem and Vanamala garland, and even had artisans create artificial extra arms to mimic Krishna's four-armed Vishnu form.</p>\n\n<p>Emboldened by his delusion and supported by his ally, the King of Kashi (Varanasi), Paundraka sent an audacious message to Krishna at Dwaraka: \"I am the true Vasudeva. You are an impostor who has falsely assumed my symbols and titles. Surrender them at once, or face me in battle.\"</p>\n\n<p>Krishna, greatly amused, accepted the challenge and rode to confront Paundraka on the battlefield near Kashi. When He saw Paundraka arrayed in his ridiculous imitation of divine symbols, Krishna laughed and said, \"You have demanded that I surrender my symbols to you. Very well — I shall now send them to you.\" He released the real Sudarshana Chakra, which blazed across the battlefield, decapitated Paundraka, and then turned on the king of Kashi, severing his head as well.</p>\n\n<p class=\"story-section-title\">The Fire of Kashi</p>\n\n<p>The son of the King of Kashi, seeking revenge, performed a ritual to invoke a terrifying fiery demon (Kritya) to destroy Krishna. The blazing apparition marched toward Dwaraka, scorching everything in its path. But Krishna dispatched the Sudarshana Chakra, which turned the Kritya back upon its creator. The fiery being returned to Kashi and destroyed the prince and his priests. The Sudarshana Chakra then set the entire city ablaze before returning to Krishna's hand. Later, Kashi was rebuilt and purified, continuing its sacred role as the city of Lord Shiva.</p>",
+        "battleNarrations": [
+          "Paundraka, dressed in absurd imitation of Krishna's divine symbols, stands on the battlefield demanding surrender.",
+          "'You demand I surrender my symbols? Very well — I shall send them to you.' Krishna smiles and raises His hand.",
+          "The real Sudarshana Chakra blazes across the battlefield, decapitating the impostor and his ally the King of Kashi!",
+          "A fiery demon summoned for revenge is turned back by the Chakra. The false Vasudeva's line is ended forever."
+        ]
+      },
+      "13": {
+        "name": "Kurukshetra",
+        "subtitle": "The Field of Dharma",
+        "demon": "The Bhagavad Gita & The Great War",
+        "demonSanskrit": "भगवद्गीता · धर्मक्षेत्र",
+        "summary": "The sacred battlefield where Krishna delivered the Bhagavad Gita and guided the Pandavas to victory in the great war for dharma.",
+        "fullStory": "<p>Kurukshetra, the \"Field of Dharma,\" was the site of the climactic eighteen-day war of the Mahabharata — the greatest conflict of the ancient world, in which Krishna played the pivotal role not as a warrior but as the divine charioteer and spiritual guide of Arjuna.</p>\n\n<p>The war erupted after all attempts at peace between the Pandavas and Kauravas failed, largely due to the intransigence of Duryodhana. Armies from across Bharatavarsha assembled on the vast plain, with eleven akshauhini divisions on the Kaurava side and seven on the Pandava side. Krishna, honoring a choice He had offered, served as Arjuna's charioteer, having vowed not to pick up weapons Himself.</p>\n\n<p class=\"story-section-title\">The Bhagavad Gita</p>\n\n<p>On the morning of the first day, as the two armies faced each other, Arjuna asked Krishna to drive his chariot between the opposing forces. Seeing his grandsire Bhishma, his guru Drona, his cousins, and countless kinsmen arrayed for mutual slaughter, Arjuna was overcome with despair. He cast down his Gandiva bow and declared he would not fight.</p>\n\n<p>What followed was the Bhagavad Gita — the \"Song of God\" — a discourse of 700 verses in which Krishna revealed the deepest truths of existence to Arjuna. He taught the nature of the soul (atman), the paths of karma yoga, jnana yoga, and bhakti yoga, the structure of material nature, and ultimately revealed His universal form (Vishvarupa) — a vision so overwhelming that Arjuna trembled in awe. Krishna's central teaching was that Arjuna must perform his duty (svadharma) without attachment to results, surrendering all actions to the Supreme.</p>\n\n<p class=\"story-section-title\">The Eighteen Days</p>\n\n<p>Throughout the war, Krishna served as the supreme strategist. Though He had vowed not to fight, His guidance was decisive: it was Krishna who devised the strategy to fell Bhishma (using Shikhandi as a shield), who counseled the half-truth that brought down Drona, who warned Arjuna against Karna's divine weapons, and who protected Arjuna from Ashwatthama's Narayanastra by advising everyone to lay down their weapons.</p>\n\n<p>On the final day, after Duryodhana fell to Bhima's mace, the war ended. The Pandavas, guided by Krishna's wisdom, had triumphed — but at a staggering cost. The field of Kurukshetra stood as an eternal reminder that dharma must be upheld, even when the price is beyond measure.</p>",
+        "battleNarrations": [
+          "On the vast plain of Kurukshetra, two enormous armies face each other. Arjuna asks Krishna to drive between them.",
+          "Arjuna sees his kin arrayed for slaughter and casts down his bow in despair. 'I shall not fight.'",
+          "Krishna reveals the Bhagavad Gita — the Song of God. He teaches dharma, karma, and the immortal nature of the soul.",
+          "Krishna reveals His cosmic Vishvarupa form — all of creation contained within His body! Arjuna trembles in awe.",
+          "Arjuna takes up his Gandiva bow once more. The eighteen-day war begins — and dharma shall prevail."
+        ]
+      },
+      "14": {
+        "name": "Hastinapura",
+        "subtitle": "City of the Elephant Throne",
+        "demon": "Intrigues of the Kauravas",
+        "demonSanskrit": "हस्तिनापुर",
+        "summary": "The Kuru capital where Krishna served as peace ambassador and where His divine diplomacy nearly averted the great war.",
+        "fullStory": "<p>Hastinapura, the capital of the Kuru dynasty built on the banks of the Ganga, was the epicenter of the political drama that led to the Mahabharata war. It was here that Krishna demonstrated His role not merely as a warrior or king, but as the supreme diplomat and upholder of dharma.</p>\n\n<p class=\"story-section-title\">The Peace Embassy</p>\n\n<p>Before the war, when all other negotiations had failed, Krishna Himself volunteered to go to Hastinapura as the Pandavas' peace ambassador. He entered the Kuru court and, in the presence of Dhritarashtra, Bhishma, Drona, Vidura, and the assembled nobles, made a final appeal for peace. He asked only for five villages for the five Pandavas — a modest request that would avert catastrophic bloodshed.</p>\n\n<p>Duryodhana, drunk with pride, refused even this. He declared he would not give the Pandavas enough land to place the tip of a needle, let alone five villages. More dangerously, he attempted to capture Krishna Himself, believing that if he could bind Krishna, the Pandavas would be powerless.</p>\n\n<p class=\"story-section-title\">The Vishvarupa in the Court</p>\n\n<p>When Duryodhana's soldiers moved to seize Him, Krishna laughed and revealed a glimpse of His universal form right there in the Kuru court. His body blazed with the light of a thousand suns. From His form emerged Brahma, Shiva, Indra, the Adityas, the Rudras, and all the armies of the cosmos. Fire and radiance filled the hall, and the courtiers fell back in terror, shielding their eyes. Even Bhishma and Drona bowed in awe.</p>\n\n<p>Only Duryodhana, blinded by ego, remained unmoved. Krishna withdrew His divine form, declared that peace had been rejected, and departed. He stopped at Vidura's humble home for a meal — honoring devotion over opulence — and then visited Kunti, the Pandavas' mother, carrying her message of courage to her sons.</p>\n\n<p>The failure of the peace embassy made the war inevitable, but Krishna's effort ensured that the moral burden fell entirely upon the Kauravas. History would remember that the Lord Himself had walked into the enemy's court and offered peace, and it was refused.</p>",
+        "battleNarrations": [
+          "Krishna enters the Kuru court as peace ambassador. He asks Duryodhana for just five villages for the Pandavas.",
+          "Duryodhana refuses — not even the land on a needle's tip! He orders his soldiers to seize Krishna.",
+          "Krishna laughs and reveals a glimpse of His universal form! His body blazes with the light of a thousand suns.",
+          "From His form emerge all the gods, all creation. The courtiers fall back in terror. Even Bhishma and Drona bow.",
+          "Krishna withdraws His divine form and departs. Peace has been rejected — war is now inevitable."
+        ]
+      },
+      "15": {
+        "name": "Gomantaka",
+        "subtitle": "The Mountain Fortress",
+        "demon": "Jarasandha's First Siege",
+        "demonSanskrit": "गोमन्तक पर्वत",
+        "summary": "When Jarasandha first besieged Them with a massive army, Krishna and Balarama leaped from this mountain fortress and escaped to establish Dwaraka.",
+        "fullStory": "<p>Gomantaka (identified with a mountain in the Goa region) plays a pivotal role in the transition of Krishna's story from Mathura to Dwaraka. After slaying Kamsa, Krishna faced the wrath of Kamsa's father-in-law Jarasandha, who assembled an enormous coalition army to avenge his son-in-law.</p>\n\n<p>Jarasandha's first assault on Mathura was repelled by Krishna and Balarama, but the Magadha king was relentless. He attacked again and again, each time with larger forces, burning the countryside and terrorizing the people. After the seventeenth siege, Krishna made the strategic decision to withdraw from Mathura, not from fear, but to protect the innocent citizens from endless warfare.</p>\n\n<p>Krishna and Balarama retreated to Gomantaka mountain, with Jarasandha's forces in hot pursuit. The demon king surrounded the mountain and set it ablaze, confident that the brothers would perish in the inferno. But Krishna and Balarama, unharmed by the flames, leaped from the summit — a distance of eighty-eight miles according to the texts — and escaped.</p>\n\n<p>This strategic withdrawal led directly to the founding of Dwaraka. Krishna understood that sometimes wisdom lies not in standing and fighting, but in choosing the right battlefield. By establishing an island fortress far from Jarasandha's reach, He protected His people while biding time for the day when Jarasandha's strength could be broken through stratagem rather than open war. The people of Mathura were safely relocated, and Dwaraka rose as one of the most glorious cities in the world.</p>",
+        "battleNarrations": [
+          "Jarasandha's massive army surrounds Gomantaka mountain. He sets the entire mountain ablaze, trapping Krishna and Balarama.",
+          "The flames roar upward. Jarasandha is confident the brothers will perish in the inferno.",
+          "Unharmed by the flames, Krishna and Balarama leap from the summit — a distance of eighty-eight miles!",
+          "The brothers escape to the western sea. This strategic retreat will lead to the founding of glorious Dwaraka!"
+        ]
+      }
+    },
+    "krishnaForms": {
+      "1": {
+        "name": "Bala Krishna",
+        "subtitle": "The Divine Infant",
+        "description": "The playful baby form in which Krishna performed miraculous feats — defeating demons while still crawling, revealing the universe within His mouth to Mother Yashoda, and enchanting all of Gokul with His innocent smile."
+      },
+      "2": {
+        "name": "Makhan Chor",
+        "subtitle": "The Butter Thief",
+        "description": "The mischievous child form beloved across all of Vrindavan. Krishna would steal freshly churned butter from the gopis' homes, share it with monkeys, and charm His way out of every scolding with His irresistible smile."
+      },
+      "3": {
+        "name": "Govinda",
+        "subtitle": "Protector of Cows",
+        "description": "The cowherd boy who tended the sacred cattle of Vrindavan with His friends. As Govinda, Krishna embodies the pastoral ideal — living simply in nature, caring for all creatures, and finding joy in the company of devotees."
+      },
+      "4": {
+        "name": "Murlidhar",
+        "subtitle": "The Divine Flute Player",
+        "description": "When Krishna plays His bamboo flute on the banks of the Yamuna, all of creation stands still. Rivers cease to flow, trees bend to listen, and every being is drawn irresistibly toward the transcendental sound that emanates from His lotus lips."
+      },
+      "5": {
+        "name": "Giridhari",
+        "subtitle": "Lifter of the Mountain",
+        "description": "The seven-year-old boy who lifted Govardhana Hill on His little finger and held it aloft for seven days, sheltering all of Vrindavan from Indra's devastating storm. This form symbolizes Krishna's effortless supremacy over all celestial powers."
+      },
+      "6": {
+        "name": "Ranchhodrai",
+        "subtitle": "He Who Left the Battlefield",
+        "description": "After Jarasandha's seventeenth siege, Krishna strategically withdrew from Mathura — not from cowardice, but from supreme wisdom. This form teaches that true strength sometimes means choosing the right battlefield rather than fighting every battle."
+      },
+      "7": {
+        "name": "Dwarakadhish",
+        "subtitle": "King of Dwaraka",
+        "description": "The majestic royal form of Krishna as sovereign of the golden island city of Dwaraka. Adorned with the Kaustubha gem, Vaijayanti garland, and Shrivatsa mark, He ruled with wisdom, justice, and divine grace over the Yadava dynasty."
+      },
+      "8": {
+        "name": "Parthasarathi",
+        "subtitle": "Charioteer of Arjuna",
+        "description": "On the battlefield of Kurukshetra, the Lord of all creation humbly served as charioteer for His devotee Arjuna. From this position He delivered the Bhagavad Gita — proving that God delights in serving those who love Him."
+      },
+      "9": {
+        "name": "Vishvarupa",
+        "subtitle": "The Universal Cosmic Form",
+        "description": "When Krishna revealed His universal form to Arjuna, the warrior beheld all of creation — past, present, and future — contained within a single divine body blazing with the light of a thousand suns. Brahma, Shiva, all the gods, all worlds existed within Him."
+      },
+      "10": {
+        "name": "Yogeshwara",
+        "subtitle": "Supreme Lord of Yoga",
+        "description": "The transcendental meditative form of Krishna as the ultimate mystic. As Yogeshwara, He is the source of all yogic power, the supreme controller of material and spiritual energies, dwelling simultaneously in every heart while remaining beyond all creation."
+      }
+    },
+    "avatars": {
+      "1": {
+        "name": "Matsya",
+        "subtitle": "The Fish Incarnation",
+        "description": "When the sage Manu preserved the Vedas from the cosmic flood, the Lord appeared as a great fish, guiding the boat of life through destruction and restoring dharma."
+      },
+      "2": {
+        "name": "Kurma",
+        "subtitle": "The Tortoise Incarnation",
+        "description": "To recover amrita for the devas and asuras, the Lord became a vast tortoise and bore Mount Mandara on His back while the ocean was churned."
+      },
+      "3": {
+        "name": "Varaha",
+        "subtitle": "The Boar Incarnation",
+        "description": "When Hiranyaksha drowned the Earth in the cosmic waters, the Lord as Varaha dove deep, lifted Bhumi on His tusks, and slew the demon in a mighty battle."
+      },
+      "4": {
+        "name": "Narasimha",
+        "subtitle": "The Man-Lion Incarnation",
+        "description": "To protect Prahlada, the Lord arose from a pillar as neither man nor beast — Narasimha — and at twilight on a threshold destroyed the tyrant Hiranyakashipu."
+      },
+      "5": {
+        "name": "Vamana",
+        "subtitle": "The Dwarf Brahmin",
+        "description": "The Lord appeared as a humble dwarf brahmachari and, with three steps, reclaimed the three worlds for the devas from the asura king Bali."
+      },
+      "6": {
+        "name": "Parashurama",
+        "subtitle": "Rama with the Axe",
+        "description": "Born to Jamadagni and Renuka, Parashurama cleared the earth of corrupt kshatriya rulers twenty-one times, restoring brahminical order by the power of his axe."
+      },
+      "7": {
+        "name": "Rama",
+        "subtitle": "Prince of Ayodhya",
+        "description": "The ideal king who walked the path of dharma through exile, the abduction of Sita, alliance with Hanuman and the vanaras, and the slaying of Ravana in Lanka."
+      },
+      "8": {
+        "name": "Krishna",
+        "subtitle": "The All-Attractive Lord",
+        "description": "The Supreme Personality who appeared in Mathura, played in Vrindavan, spoke the Bhagavad Gita at Kurukshetra, and established dharma — the heart of this map’s journey."
+      },
+      "9": {
+        "name": "Buddha",
+        "subtitle": "The Compassionate Teacher",
+        "description": "In several lists, the Lord appears as Buddha to teach non-violence and to draw away beings from misuse of Vedic rites; some traditions substitute Balarama in this place."
+      },
+      "10": {
+        "name": "Kalki",
+        "subtitle": "The Future Rider",
+        "description": "At the end of Kali-yuga, the Lord will come as Kalki upon a white horse, with sword blazing, to destroy wickedness and begin a new age of purity."
+      }
+    },
+    "deities": {
+      "1": {
+        "name": "Vishnu",
+        "subtitle": "The All-Pervading Preserver",
+        "description": "The sustaining aspect of the Trimurti: He rests on Shesha, holds the discus and conch, and descends again and again whenever dharma declines."
+      },
+      "2": {
+        "name": "Shiva",
+        "subtitle": "The Auspicious Destroyer",
+        "description": "The transformer who dissolves worlds in cosmic fire yet grants liberation; Lord of yoga, the Ganga in His hair, and the rhythm of creation through His damaru."
+      },
+      "3": {
+        "name": "Devi",
+        "subtitle": "The Divine Mother",
+        "description": "Mahadevi manifests as Durga, Kali, Parvati, and countless forms — the active power (shakti) that animates the universe and defeats the forces of chaos."
+      },
+      "4": {
+        "name": "Brahma",
+        "subtitle": "The Creator",
+        "description": "Born from the lotus from Vishnu’s navel, the four-faced lord of vidya who shapes the worlds and gives forth the Vedas — though rarely worshipped alone, he opens every cycle."
+      },
+      "5": {
+        "name": "Lakshmi",
+        "subtitle": "Goddess of Fortune",
+        "description": "The eternal consort of Vishnu, radiant on the lotus, bestowing prosperity, purity, and grace — wherever He descends, She follows as His beloved strength."
+      },
+      "6": {
+        "name": "Saraswati",
+        "subtitle": "Goddess of Learning",
+        "description": "Seated on a white swan with vina in hand, she is shakti of speech, music, and wisdom — adored by students, artists, and seekers of truth."
+      },
+      "7": {
+        "name": "Ganesha",
+        "subtitle": "Lord of Beginnings",
+        "description": "The beloved elephant-headed son of Shiva and Parvati, remover of obstacles, patron of writers and travelers — invoked first in rites across the Hindu world."
+      },
+      "8": {
+        "name": "Kartikeya",
+        "subtitle": "Commander of the Gods",
+        "description": "The radiant warrior born to destroy Taraka, riding a peacock with vel in hand — Skanda, Murugan, or Subrahmanya to many traditions."
+      },
+      "9": {
+        "name": "Hanuman",
+        "subtitle": "The Perfect Servant",
+        "description": "Son of the wind, incarnation of devotion — he leaped to Lanka, carried the mountain of herbs, and in every age reminds the world of unwavering love for Rama."
+      },
+      "10": {
+        "name": "Surya",
+        "subtitle": "The Sun God",
+        "description": "The visible face of the highest light, charioteer of the day, healer and witness of all deeds — father of legends and axis of time in Vedic praise."
+      }
+    },
+    "locationImages": {
+      "1": "Krishna Slaying Kamsa — Indian lithograph, c. 1910",
+      "2": "The Death of the Demoness Putana — Bhagavata Purana, Bikaner, c. 1610",
+      "3": "Krishna Quelling the Serpent King Kaliya — Bhagavata Purana, Marwar, 1718",
+      "4": "Krishna Killing Dhenukasura — Bhagavata Purana, Malwa, c. 1650",
+      "5": "Krishna Lifting Mount Govardhan, c. 1800 — National Museum, New Delhi",
+      "6": "Sudama Beholds Krishna’s Golden Palace in Dwaraka — Garhwal, c. 1775–1790",
+      "7": "Bhima and Jarasandha Wrestling — Raja Ravi Varma",
+      "8": "Krishna Battles the Armies of Demon Naraka, c. 1520 — Metropolitan Museum",
+      "9": "Aniruddha and Usha — Colour lithograph, 19th century",
+      "10": "Krishna Reveals His Universal Form — Indian print, c. 1940s",
+      "11": "Krishna and Rukmini in a Celestial Chariot — LACMA",
+      "12": "The Sudarshana Chakra in Action — Harivamsha, Mughal court, c. 1585–1590",
+      "13": "Krishna and Arjuna on the Chariot — 18th–19th century",
+      "14": "Krishna Mediating between Pandavas and Kauravas — Mughal painting, c. 1600",
+      "15": "Krishna and Balarama on Their Journey — Colour lithograph, c. 1895"
+    },
+    "formsImages": {
+      "1": "Yashoda with Krishna — Watercolor, 1914",
+      "2": "Krishna and the Cowherds on a Picnic — Bhagavata Purana, LACMA",
+      "3": "Krishna Playing the Flute with the Cowherd Girls — Wellcome Collection",
+      "4": "Krishna with Flute — Pahari School, c. 1790–1800",
+      "5": "Krishna Lifting Mount Govardhan, c. 1800 — National Museum, New Delhi",
+      "6": "Krishna and Balarama on Their Journey — Colour lithograph, c. 1895",
+      "7": "Krishna and Rukmini Ride Away in a Chariot — Lithograph, c. 1895",
+      "8": "Krishna and Arjuna on the Chariot — 18th–19th century",
+      "9": "Krishna Reveals His Universal Form — Indian print, c. 1940s",
+      "10": "Kama Disturbs Krishna’s Meditation — Gita Govinda, c. 1650–60"
+    },
+    "avatarsImages": {
+      "1": "Matsya avatar — painting on paper, British Museum, c. 1820",
+      "2": "Kurma avatar — Indian painting (Vishnu as tortoise), Wikimedia Commons",
+      "3": "The Emergence of Varāha — Bhagavata Purana folio attributed to Manaku of Guler, c. 1740",
+      "4": "Narasimha avatar — Indian painting, Wikimedia Commons",
+      "5": "Vāmana avatar — Indian painting, Wikimedia Commons",
+      "6": "Paraśurāma — sculpture depiction, photo Wikimedia Commons",
+      "7": "Rāma with bow and arrows — chromolithograph, Wikimedia Commons",
+      "8": "Krishna Slaying Kamsa — Indian lithograph, c. 1910 (Krishna līlāvatāra)",
+      "9": "Buddha, Dashavatara ganjifa card — LACMA collections",
+      "10": "Kalki avatar — Indian painting, Wikimedia Commons"
+    },
+    "deitiesImages": {
+      "1": "Vishnu on Garuḍa — photo, Wikimedia Commons",
+      "2": "Śiva Naṭarāja (Lord of Dance) — bronze, LACMA",
+      "3": "The Goddess Durgā slaying Mahisha — painting, Metropolitan Museum of Art",
+      "4": "Brahmā on the swan — Company school painting, Wikimedia Commons",
+      "5": "Vishnu and Lakṣmī — Pahari (Bilaspur), c. 1810",
+      "6": "Goddess Sarasvatī — Raja Ravi Varma",
+      "7": "Gaṇeśa — Kalighat painting, 19th c.",
+      "8": "Somaskanda: Shiva, Uma, and Skanda — South Indian bronze, Wikimedia Commons",
+      "9": "Hanuman finds Sita in Ashoka vana — from the Akbar Ramayana, c. 16th c.",
+      "10": "Mandala of Surya, the Sun God — Nepal, Walters Art Museum"
+    }
+  }
+}
