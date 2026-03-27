@@ -243,8 +243,8 @@ var KrishnaApp = (function () {
           maxWidth: 360,
           minWidth: 260,
           closeButton: true,
-          autoPanPaddingTopLeft: L.point(20, 20),
-          autoPanPaddingBottomRight: L.point(20, 20)
+          autoPanPaddingTopLeft: L.point(40, 160),
+          autoPanPaddingBottomRight: L.point(40, 40)
         });
       }
 
