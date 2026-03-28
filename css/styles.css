@@ -127,6 +127,16 @@ body::before {
   display: none;
 }
 
+.header-actions {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 .site-title {
   font-family: var(--font-display);
   font-size: 2.4rem;
@@ -934,7 +944,7 @@ body::before {
   }
 
   .header-actions.is-open {
-    max-height: 200px;
+    max-height: 280px;
     opacity: 1;
     padding: 14px 16px;
     border-bottom-color: var(--gold);
@@ -1407,16 +1417,6 @@ body::before {
    DIVINE FORMS GALLERY
    =================================================================== */
 
-.header-actions {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
 /* Language switcher */
 .lang-switcher {
   display: flex;
@@ -1796,7 +1796,7 @@ body::before {
    RESPONSIVE ADDITIONS
    =================================================================== */
 
-@media (max-width: 900px) {
+@media (min-width: 601px) and (max-width: 900px) {
   .header-actions {
     right: 8px;
     gap: 6px;
@@ -1807,7 +1807,9 @@ body::before {
     padding: 6px 12px;
     min-height: 36px;
   }
+}
 
+@media (max-width: 900px) {
   .sidebar-toggle {
     width: 48px;
     height: 48px;
