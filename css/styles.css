@@ -924,6 +924,11 @@ body::before {
   color: var(--saffron) !important;
 }
 
+.leaflet-control-zoom {
+  margin-top: 70px !important;
+  margin-left: 10px !important;
+}
+
 .leaflet-control-zoom a {
   background: #2C1810 !important;
   color: var(--gold) !important;
