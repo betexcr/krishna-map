@@ -6,6 +6,8 @@
   <title data-i18n="siteTitle">Travels of Shri Krishna</title>
   <meta name="description" data-i18n="metaDesc" content="An interactive map of Lord Krishna's travels across ancient India, chronicling the demons He defeated and the divine pastimes at each sacred location.">
 
+  <link rel="canonical" href="https://krsna.surge.sh/">
+
   <!-- Favicon -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -77,8 +79,8 @@
         <button type="button" class="lang-btn" data-lang="hi">हि</button>
         <button type="button" class="lang-btn" data-lang="es">ES</button>
       </div>
-      <button class="header-btn" id="btnHeaderQuest" data-i18n="questMode">Quest Mode</button>
-      <button class="header-btn" id="btnOpenForms" data-i18n="divineForms">Divine Forms</button>
+      <button type="button" class="header-btn" id="btnHeaderQuest" data-i18n="questMode">Quest Mode</button>
+      <button type="button" class="header-btn" id="btnOpenForms" data-i18n="divineForms">Divine Forms</button>
     </div>
   </header>
 
@@ -87,13 +89,13 @@
 
     <!-- Sidebar Timeline -->
     <aside class="sidebar" id="sidebar">
-      <button class="sidebar-toggle" id="sidebarToggle" data-i18n-aria="toggleTimeline" aria-label="Toggle timeline">
+      <button type="button" class="sidebar-toggle" id="sidebarToggle" data-i18n-aria="toggleTimeline" aria-label="Toggle timeline">
         <span class="toggle-icon">&#9776;</span>
       </button>
       <div class="sidebar-inner">
         <!-- Quest Controls -->
-        <button class="btn-quest" id="btnBeginQuest" data-i18n="beginQuest">Begin Quest</button>
-        <button class="btn-quest btn-quest-exit" id="btnExitQuest" style="display:none" data-i18n="exitQuest">Exit Quest</button>
+        <button type="button" class="btn-quest" id="btnBeginQuest" data-i18n="beginQuest">Begin Quest</button>
+        <button type="button" class="btn-quest btn-quest-exit" id="btnExitQuest" style="display:none" data-i18n="exitQuest">Exit Quest</button>
 
         <!-- Quest Progress Panel -->
         <div id="questPanel" style="display:none" class="quest-panel">
@@ -111,7 +113,7 @@
 
         <!-- Free Explore Controls -->
         <div id="freePanel">
-          <button class="btn-journey" id="btnShowJourney">
+          <button type="button" class="btn-journey" id="btnShowJourney">
             <span class="btn-icon">&#10043;</span> Show Journey Path
           </button>
         </div>
@@ -128,7 +130,7 @@
   <!-- Encyclopedia Overlay -->
   <div class="encyclopedia-overlay" id="encyclopediaOverlay">
     <div class="encyclopedia-card">
-      <button class="encyclopedia-close" id="encyclopediaClose">&times;</button>
+      <button type="button" class="encyclopedia-close" id="encyclopediaClose" aria-label="Close">&times;</button>
       <div class="encyclopedia-header">
         <h2 class="encyclopedia-title" id="encTitle"></h2>
         <p class="encyclopedia-demon" id="encDemon"></p>
@@ -143,7 +145,7 @@
       </div>
       <div class="encyclopedia-body" id="encBody"></div>
       <div class="encyclopedia-actions">
-        <button class="btn-watch-battle" id="btnWatchBattle" data-i18n="watchBattle">Watch Battle</button>
+        <button type="button" class="btn-watch-battle" id="btnWatchBattle" data-i18n="watchBattle">Watch Battle</button>
       </div>
       <div class="encyclopedia-footer">
         <p class="encyclopedia-source" data-i18n="source">Source: Srimad Bhagavatam &amp; Mahabharata</p>
@@ -153,7 +155,7 @@
 
   <!-- Battle Theater Overlay -->
   <div class="battle-overlay" id="battleTheater">
-    <button class="battle-close" id="battleClose">&times;</button>
+    <button type="button" class="battle-close" id="battleClose" aria-label="Close">&times;</button>
     <h2 class="battle-title" id="battleTitle"></h2>
     <div class="battle-stage" id="battleStage"></div>
     <div class="battle-narration-bar">
@@ -169,7 +171,7 @@
   <!-- Victory Screen Overlay -->
   <div class="victory-overlay" id="victoryOverlay">
     <div class="victory-card">
-      <button class="victory-close-btn" id="victoryClose">&times;</button>
+      <button type="button" class="victory-close-btn" id="victoryClose" aria-label="Close">&times;</button>
       <div class="victory-chakra-container">
         <svg class="victory-chakra-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <g class="vc-spin" transform="translate(100,100)">
@@ -183,14 +185,14 @@
       <p class="victory-subtitle" data-i18n="victorySubtitle">The divine journey of Shri Krishna is complete.</p>
       <p class="victory-xp" id="victoryXP">0 XP Earned</p>
       <div class="ornamental-divider"></div>
-      <button class="btn-journey" id="victoryContinue" data-i18n="continueExploring">Continue Exploring</button>
+      <button type="button" class="btn-journey" id="victoryContinue" data-i18n="continueExploring">Continue Exploring</button>
     </div>
   </div>
 
   <!-- Sacred Galleries (Krishna forms, avatars, deities) -->
   <div class="forms-overlay" id="formsGallery">
     <div class="forms-container">
-      <button class="forms-close" id="formsClose">&times;</button>
+      <button type="button" class="forms-close" id="formsClose" aria-label="Close">&times;</button>
       <h2 class="forms-title" id="galleryMainTitle" data-i18n="galTitleKrishna">Krishna&apos;s līlā forms</h2>
       <p class="forms-subtitle" id="galleryMainSubtitle" data-i18n="galSubKrishna">The playful and royal manifestations celebrated on this journey map.</p>
       <div class="ornamental-divider"></div>

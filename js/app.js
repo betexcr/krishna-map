@@ -132,25 +132,26 @@ var KrishnaApp = (function () {
      SVG Marker Icons
      --------------------------------------------------------------- */
 
-  function createChakraIcon(phase, locked) {
+  function createChakraIcon(phase, locked, uid) {
     var colors = {
       childhood: { outer: '#FF9933', inner: '#DAA520' },
       youth:     { outer: '#DAA520', inner: '#FF9933' },
       king:      { outer: '#E8820A', inner: '#FFD700' }
     };
     var c = colors[phase] || colors.youth;
+    var filterId = 'glow-' + phase + '-' + uid;
 
     var svg =
       '<div class="chakra-marker marker-' + phase + '">' +
         '<div class="marker-pulse"></div>' +
         '<svg width="32" height="32" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">' +
           '<defs>' +
-            '<filter id="glow-' + phase + '" x="-50%" y="-50%" width="200%" height="200%">' +
+            '<filter id="' + filterId + '" x="-50%" y="-50%" width="200%" height="200%">' +
               '<feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>' +
               '<feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>' +
             '</filter>' +
           '</defs>' +
-          '<g filter="url(#glow-' + phase + ')">';
+          '<g filter="url(#' + filterId + ')">';
 
     svg += '<circle cx="32" cy="32" r="26" fill="none" stroke="' + c.outer + '" stroke-width="2.5" opacity="0.9"/>';
     svg += '<circle cx="32" cy="32" r="20" fill="none" stroke="' + c.outer + '" stroke-width="1.5" opacity="0.6"/>';
@@ -221,7 +222,7 @@ var KrishnaApp = (function () {
     KRISHNA_LOCATIONS.forEach(function (rawLoc) {
       var loc = locLoc(rawLoc);
       var locked = !QuestMode.isUnlocked(loc.id);
-      var icon = createChakraIcon(rawLoc.phase, locked);
+      var icon = createChakraIcon(rawLoc.phase, locked, rawLoc.id);
       var marker = L.marker([rawLoc.lat, rawLoc.lng], { icon: icon }).addTo(map);
 
       if (!locked) {
@@ -345,14 +346,24 @@ var KrishnaApp = (function () {
 
       li.className = classes;
       li.setAttribute('data-id', rawLoc.id);
+      li.setAttribute('role', 'button');
+      li.setAttribute('tabindex', '0');
       li.innerHTML =
         '<span class="timeline-item-number">' + String(index + 1).padStart(2, '0') + '</span>' +
         '<span class="timeline-item-name">' + loc.name + '</span>' +
         '<span class="timeline-item-demon">' + loc.demon + '</span>';
 
-      li.addEventListener('click', function () {
+      function activateItem() {
         if (QuestMode.isActive() && !QuestMode.isUnlocked(rawLoc.id)) return;
         flyToLocation(rawLoc.id);
+      }
+
+      li.addEventListener('click', activateItem);
+      li.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activateItem();
+        }
       });
 
       list.appendChild(li);
@@ -618,6 +629,11 @@ var KrishnaApp = (function () {
       var lb = document.getElementById('imageLightbox');
       if (lb && lb.classList.contains('visible')) {
         closeImageLightbox();
+        return;
+      }
+      var vo = document.getElementById('victoryOverlay');
+      if (vo && vo.classList.contains('visible')) {
+        vo.classList.remove('visible');
         return;
       }
       closeEncyclopedia();
