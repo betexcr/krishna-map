@@ -877,7 +877,8 @@ body::before {
   .header-ornament { display: none; }
 
   .header-actions {
-    position: static;
+    position: relative;
+    z-index: 2;
     transform: none;
     justify-content: center;
     flex-wrap: wrap;
