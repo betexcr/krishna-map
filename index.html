@@ -70,7 +70,7 @@
       <p class="site-subtitle" data-i18n="siteSubtitle">A Chronicle of Divine Pastimes &amp; Demon Battles</p>
     </div>
     <div class="header-ornament header-ornament--right"></div>
-    <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
+    <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="headerActions">
       <span class="mobile-menu-icon">&#9776;</span>
     </button>
     <div class="header-actions" id="headerActions">
@@ -128,7 +128,7 @@
   </main>
 
   <!-- Encyclopedia Overlay -->
-  <div class="encyclopedia-overlay" id="encyclopediaOverlay">
+  <div class="encyclopedia-overlay" id="encyclopediaOverlay" role="dialog" aria-modal="true">
     <div class="encyclopedia-card">
       <button type="button" class="encyclopedia-close" id="encyclopediaClose" aria-label="Close">&times;</button>
       <div class="encyclopedia-header">
@@ -154,7 +154,7 @@
   </div>
 
   <!-- Battle Theater Overlay -->
-  <div class="battle-overlay" id="battleTheater">
+  <div class="battle-overlay" id="battleTheater" role="dialog" aria-modal="true">
     <button type="button" class="battle-close" id="battleClose" aria-label="Close">&times;</button>
     <h2 class="battle-title" id="battleTitle"></h2>
     <div class="battle-stage" id="battleStage"></div>
@@ -169,7 +169,7 @@
   </div>
 
   <!-- Victory Screen Overlay -->
-  <div class="victory-overlay" id="victoryOverlay">
+  <div class="victory-overlay" id="victoryOverlay" role="dialog" aria-modal="true">
     <div class="victory-card">
       <button type="button" class="victory-close-btn" id="victoryClose" aria-label="Close">&times;</button>
       <div class="victory-chakra-container">
@@ -190,7 +190,7 @@
   </div>
 
   <!-- Sacred Galleries (Krishna forms, avatars, deities) -->
-  <div class="forms-overlay" id="formsGallery">
+  <div class="forms-overlay" id="formsGallery" role="dialog" aria-modal="true">
     <div class="forms-container">
       <button type="button" class="forms-close" id="formsClose" aria-label="Close">&times;</button>
       <h2 class="forms-title" id="galleryMainTitle" data-i18n="galTitleKrishna">Krishna&apos;s līlā forms</h2>

@@ -98,8 +98,10 @@ var KrishnaApp = (function () {
     }
     var capEl = document.getElementById('imageLightboxCaption');
     if (capEl) capEl.textContent = '';
-    var encOpen = document.getElementById('encyclopediaOverlay').classList.contains('visible');
-    var battleOpen = document.getElementById('battleTheater').classList.contains('visible');
+    var encEl = document.getElementById('encyclopediaOverlay');
+    var battleEl = document.getElementById('battleTheater');
+    var encOpen = encEl && encEl.classList.contains('visible');
+    var battleOpen = battleEl && battleEl.classList.contains('visible');
     if (!encOpen && !battleOpen) {
       document.body.style.overflow = '';
     }
@@ -260,7 +262,8 @@ var KrishnaApp = (function () {
       var container = e.popup.getElement();
       if (!container) return;
       var btn = container.querySelector('.popup-read-more');
-      if (btn) {
+      if (btn && !btn._boundReadMore) {
+        btn._boundReadMore = true;
         btn.addEventListener('click', function () {
           var id = parseInt(this.getAttribute('data-id'), 10);
           openEncyclopedia(id);
@@ -324,6 +327,7 @@ var KrishnaApp = (function () {
 
   function buildTimeline() {
     var list = document.getElementById('timelineList');
+    if (!list) return;
     list.innerHTML = '';
 
     KRISHNA_LOCATIONS.forEach(function (rawLoc, index) {
@@ -344,10 +348,13 @@ var KrishnaApp = (function () {
         }
       }
 
+      var isLocked = classes.indexOf('quest-locked') !== -1;
+
       li.className = classes;
       li.setAttribute('data-id', rawLoc.id);
       li.setAttribute('role', 'button');
-      li.setAttribute('tabindex', '0');
+      li.setAttribute('tabindex', isLocked ? '-1' : '0');
+      if (isLocked) li.setAttribute('aria-disabled', 'true');
       li.innerHTML =
         '<span class="timeline-item-number">' + String(index + 1).padStart(2, '0') + '</span>' +
         '<span class="timeline-item-name">' + loc.name + '</span>' +
@@ -611,12 +618,16 @@ var KrishnaApp = (function () {
      --------------------------------------------------------------- */
 
   function bindEvents() {
-    document.getElementById('encyclopediaClose').addEventListener('click', closeEncyclopedia);
-    document.getElementById('encyclopediaOverlay').addEventListener('click', function (e) {
+    var encClose = document.getElementById('encyclopediaClose');
+    var encOverlay = document.getElementById('encyclopediaOverlay');
+    var watchBattle = document.getElementById('btnWatchBattle');
+
+    if (encClose) encClose.addEventListener('click', closeEncyclopedia);
+    if (encOverlay) encOverlay.addEventListener('click', function (e) {
       if (e.target === this) closeEncyclopedia();
     });
 
-    document.getElementById('btnWatchBattle').addEventListener('click', function () {
+    if (watchBattle) watchBattle.addEventListener('click', function () {
       if (currentEncLocationId) {
         var battleLocId = currentEncLocationId;
         closeEncyclopedia();
@@ -641,12 +652,15 @@ var KrishnaApp = (function () {
       closeFormsGallery();
     });
 
-    document.getElementById('btnShowJourney').addEventListener('click', toggleJourneyPath);
+    var journeyBtn = document.getElementById('btnShowJourney');
+    if (journeyBtn) journeyBtn.addEventListener('click', toggleJourneyPath);
 
     var sidebarToggle = document.getElementById('sidebarToggle');
     var sidebar = document.getElementById('sidebar');
-    sidebarToggle.addEventListener('click', function () { sidebar.classList.toggle('collapsed'); });
-    if (window.innerWidth <= 900) { sidebar.classList.add('collapsed'); }
+    if (sidebarToggle && sidebar) {
+      sidebarToggle.addEventListener('click', function () { sidebar.classList.toggle('collapsed'); });
+    }
+    if (sidebar && window.innerWidth <= 900) { sidebar.classList.add('collapsed'); }
 
     var mobileMenuToggle = document.getElementById('mobileMenuToggle');
     var headerActions = document.getElementById('headerActions');
@@ -654,6 +668,7 @@ var KrishnaApp = (function () {
       function closeMobileMenu() {
         headerActions.classList.remove('is-open');
         mobileMenuToggle.setAttribute('aria-label', 'Open menu');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
         mobileMenuToggle.querySelector('.mobile-menu-icon').innerHTML = '&#9776;';
       }
 
@@ -662,6 +677,7 @@ var KrishnaApp = (function () {
         headerActions.classList.toggle('is-open');
         var isOpen = headerActions.classList.contains('is-open');
         mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         mobileMenuToggle.querySelector('.mobile-menu-icon').innerHTML = isOpen ? '&#10005;' : '&#9776;';
       });
 
@@ -678,9 +694,13 @@ var KrishnaApp = (function () {
       });
     }
 
-    document.getElementById('btnOpenForms').addEventListener('click', openFormsGallery);
-    document.getElementById('formsClose').addEventListener('click', closeFormsGallery);
-    document.getElementById('formsGallery').addEventListener('click', function (e) {
+    var openFormsBtn = document.getElementById('btnOpenForms');
+    var formsCloseBtn = document.getElementById('formsClose');
+    var formsOverlay = document.getElementById('formsGallery');
+
+    if (openFormsBtn) openFormsBtn.addEventListener('click', openFormsGallery);
+    if (formsCloseBtn) formsCloseBtn.addEventListener('click', closeFormsGallery);
+    if (formsOverlay) formsOverlay.addEventListener('click', function (e) {
       if (e.target === this) closeFormsGallery();
     });
 

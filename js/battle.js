@@ -42,8 +42,8 @@ var BattleTheater = (function () {
     doneBtn = document.getElementById('battleDone');
 
     if (!overlay) return;
-    closeBtn.addEventListener('click', close);
-    skipBtn.addEventListener('click', skipToEnd);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    if (skipBtn) skipBtn.addEventListener('click', skipToEnd);
     if (doneBtn) doneBtn.addEventListener('click', close);
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) close();
