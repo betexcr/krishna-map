@@ -12,6 +12,7 @@ var BattleTheater = (function () {
   var typewriterTimer = null;
   var sceneTimer = null;
   var animFrameId = null;
+  var spinChakraFrameId = null;
   var isPlaying = false;
 
   var STEP_DURATION = 4200;
@@ -72,6 +73,8 @@ var BattleTheater = (function () {
     clearTimeout(sceneTimer);
     clearTimeout(typewriterTimer);
     cancelAnimationFrame(animFrameId);
+    cancelAnimationFrame(spinChakraFrameId);
+    spinChakraFrameId = null;
     overlay.classList.remove('visible');
     overlay.classList.remove('battle-at-end');
     document.body.style.overflow = '';
@@ -505,19 +508,21 @@ var BattleTheater = (function () {
   function spinChakra(el, duration) {
     var t0 = performance.now();
     chakraAngle = 0;
+    cancelAnimationFrame(spinChakraFrameId);
     function tick(now) {
       var elapsed = now - t0;
       if (elapsed > duration) {
         el.setAttribute('opacity', '0');
+        spinChakraFrameId = null;
         return;
       }
       chakraAngle = (elapsed / 4) % 360;
       el.setAttribute('transform', 'translate(350,200) rotate(' + chakraAngle + ')');
       var fade = elapsed > duration - 500 ? (duration - elapsed) / 500 : 1;
       el.setAttribute('opacity', String(fade));
-      requestAnimationFrame(tick);
+      spinChakraFrameId = requestAnimationFrame(tick);
     }
-    requestAnimationFrame(tick);
+    spinChakraFrameId = requestAnimationFrame(tick);
   }
 
   /* ---- Victory ---- */

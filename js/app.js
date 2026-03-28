@@ -240,7 +240,7 @@ var KrishnaApp = (function () {
             '<div class="popup-location">' + loc.name + '</div>' +
             '<div class="popup-demon">' + loc.demon + '</div>' +
             '<p class="popup-summary">' + loc.summary + '</p>' +
-            '<button class="popup-read-more" data-id="' + loc.id + '">' + I18n.t('readFullStory') + ' &#10140;</button>' +
+            '<button type="button" class="popup-read-more" data-id="' + loc.id + '">' + I18n.t('readFullStory') + ' &#10140;</button>' +
           '</div>';
         marker.bindPopup(popupContent, {
           maxWidth: 360,
@@ -569,11 +569,28 @@ var KrishnaApp = (function () {
       closeFormsGallery();
       setTimeout(function () { flyToLocation(locId); }, 300);
     });
-    document.querySelectorAll('.gallery-tab').forEach(function (tab) {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.gallery-tab'));
+    tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
         switchGalleryTab(tab.getAttribute('data-tab'));
       });
     });
+
+    var tablist = document.querySelector('.gallery-tabs');
+    if (tablist) {
+      tablist.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        var current = document.activeElement;
+        var idx = tabs.indexOf(current);
+        if (idx === -1) return;
+        e.preventDefault();
+        var next = e.key === 'ArrowRight'
+          ? tabs[(idx + 1) % tabs.length]
+          : tabs[(idx - 1 + tabs.length) % tabs.length];
+        next.focus();
+        switchGalleryTab(next.getAttribute('data-tab'));
+      });
+    }
   }
 
   function openFormsGallery() {

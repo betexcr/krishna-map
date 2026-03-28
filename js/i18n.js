@@ -44,6 +44,12 @@ var I18n = (function () {
     }
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'locales/' + code + '.json', true);
+    xhr.timeout = 8000;
+    xhr.ontimeout = function () {
+      cache[code] = { ui: {}, content: {} };
+      currentLocale = code;
+      if (cb) cb();
+    };
     xhr.onload = function () {
       if (xhr.status >= 200 && xhr.status < 300) {
         try {
