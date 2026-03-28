@@ -880,6 +880,7 @@ body::before {
   }
 
   .site-title { font-size: 1.3rem; }
+  .site-subtitle { display: none; }
   .header-ornament { display: none; }
 
   .mobile-menu-toggle {
@@ -907,7 +908,7 @@ body::before {
   }
 
   .header-actions {
-    display: none;
+    display: flex;
     position: absolute;
     top: 100%;
     left: 0;
@@ -917,14 +918,23 @@ body::before {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 14px 16px;
+    padding: 0 16px;
     background: linear-gradient(180deg, #1a0f0a 0%, #2C1810 100%);
-    border-bottom: 2px solid var(--gold);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    border-bottom: 2px solid transparent;
+    box-shadow: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.3s ease,
+                border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .header-actions.is-open {
-    display: flex;
+    max-height: 200px;
+    opacity: 1;
+    padding: 14px 16px;
+    border-bottom-color: var(--gold);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   }
 
   .main-layout {
@@ -946,7 +956,6 @@ body::before {
 }
 
 @media (max-width: 400px) {
-  .site-subtitle { display: none; }
   .lotus-container { width: 36px; height: 30px; }
 }
 
@@ -962,11 +971,6 @@ body::before {
 
 .leaflet-control-attribution a {
   color: var(--saffron) !important;
-}
-
-.leaflet-control-zoom {
-  margin-top: 70px !important;
-  margin-left: 10px !important;
 }
 
 .leaflet-control-zoom a {
@@ -1817,6 +1821,11 @@ body::before {
 
   .forms-grid {
     grid-template-columns: 1fr;
+  }
+
+  .leaflet-control-zoom {
+    margin-top: 70px !important;
+    margin-left: 10px !important;
   }
 }
 

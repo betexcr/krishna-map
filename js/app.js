@@ -635,18 +635,30 @@ var KrishnaApp = (function () {
     var mobileMenuToggle = document.getElementById('mobileMenuToggle');
     var headerActions = document.getElementById('headerActions');
     if (mobileMenuToggle && headerActions) {
-      mobileMenuToggle.addEventListener('click', function () {
+      function closeMobileMenu() {
+        headerActions.classList.remove('is-open');
+        mobileMenuToggle.setAttribute('aria-label', 'Open menu');
+        mobileMenuToggle.querySelector('.mobile-menu-icon').innerHTML = '&#9776;';
+      }
+
+      mobileMenuToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
         headerActions.classList.toggle('is-open');
         var isOpen = headerActions.classList.contains('is-open');
         mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
         mobileMenuToggle.querySelector('.mobile-menu-icon').innerHTML = isOpen ? '&#10005;' : '&#9776;';
       });
+
       headerActions.addEventListener('click', function (e) {
         if (e.target.closest('.lang-btn') || e.target.closest('.header-btn')) {
-          headerActions.classList.remove('is-open');
-          mobileMenuToggle.setAttribute('aria-label', 'Open menu');
-          mobileMenuToggle.querySelector('.mobile-menu-icon').innerHTML = '&#9776;';
+          closeMobileMenu();
         }
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!headerActions.classList.contains('is-open')) return;
+        if (e.target.closest('#headerActions') || e.target.closest('#mobileMenuToggle')) return;
+        closeMobileMenu();
       });
     }
 
