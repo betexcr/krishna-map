@@ -838,6 +838,7 @@ body::before {
     left: 0;
     height: 100%;
     z-index: 950;
+    overflow: visible;
     box-shadow: 4px 0 20px var(--shadow-dark);
   }
 
