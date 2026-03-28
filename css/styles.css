@@ -864,27 +864,67 @@ body::before {
   }
 
   .site-header {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: auto;
-    padding: 12px 12px 10px;
+    padding: 10px 12px;
     overflow: visible;
+    justify-content: center;
+    align-items: center;
   }
 
   .header-content {
-    padding-bottom: 6px;
+    padding-bottom: 2px;
+    flex: 1;
+    min-width: 0;
   }
 
   .site-title { font-size: 1.3rem; }
   .header-ornament { display: none; }
 
-  .header-actions {
-    position: relative;
-    z-index: 2;
-    transform: none;
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    width: 100%;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: rgba(128, 0, 0, 0.6);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    color: var(--gold);
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.25s;
+  }
+
+  .mobile-menu-toggle:active {
+    background: var(--deep-red);
+  }
+
+  .header-actions {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    background: linear-gradient(180deg, #1a0f0a 0%, #2C1810 100%);
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  }
+
+  .header-actions.is-open {
+    display: flex;
   }
 
   .main-layout {
@@ -1358,6 +1398,10 @@ body::before {
 /* ===================================================================
    DIVINE FORMS GALLERY
    =================================================================== */
+
+.mobile-menu-toggle {
+  display: none;
+}
 
 .header-actions {
   position: absolute;

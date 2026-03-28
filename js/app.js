@@ -632,6 +632,24 @@ var KrishnaApp = (function () {
     sidebarToggle.addEventListener('click', function () { sidebar.classList.toggle('collapsed'); });
     if (window.innerWidth <= 900) { sidebar.classList.add('collapsed'); }
 
+    var mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    var headerActions = document.getElementById('headerActions');
+    if (mobileMenuToggle && headerActions) {
+      mobileMenuToggle.addEventListener('click', function () {
+        headerActions.classList.toggle('is-open');
+        var isOpen = headerActions.classList.contains('is-open');
+        mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        mobileMenuToggle.querySelector('.mobile-menu-icon').innerHTML = isOpen ? '&#10005;' : '&#9776;';
+      });
+      headerActions.addEventListener('click', function (e) {
+        if (e.target.closest('.lang-btn') || e.target.closest('.header-btn')) {
+          headerActions.classList.remove('is-open');
+          mobileMenuToggle.setAttribute('aria-label', 'Open menu');
+          mobileMenuToggle.querySelector('.mobile-menu-icon').innerHTML = '&#9776;';
+        }
+      });
+    }
+
     document.getElementById('btnOpenForms').addEventListener('click', openFormsGallery);
     document.getElementById('formsClose').addEventListener('click', closeFormsGallery);
     document.getElementById('formsGallery').addEventListener('click', function (e) {
