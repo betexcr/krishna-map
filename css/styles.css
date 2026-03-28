@@ -35,9 +35,15 @@
   box-sizing: border-box;
 }
 
+button, a, .timeline-item, .sidebar-toggle, [role="tab"] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
 html, body {
   height: 100%;
   overflow: hidden;
+  overscroll-behavior: none;
 }
 
 body {
@@ -518,10 +524,11 @@ body::before {
   color: var(--gold);
   background: none;
   border: 1px solid var(--gold);
-  padding: 5px 14px;
+  padding: 8px 18px;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s;
+  min-height: 40px;
 }
 
 .popup-read-more:hover {
@@ -658,7 +665,7 @@ body::before {
 .encyclopedia-close {
   position: absolute;
   top: 12px;
-  right: 16px;
+  right: 12px;
   font-size: 2rem;
   color: var(--gold);
   background: none;
@@ -666,6 +673,11 @@ body::before {
   cursor: pointer;
   line-height: 1;
   transition: color 0.3s, transform 0.2s;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .encyclopedia-close:hover {
@@ -843,11 +855,40 @@ body::before {
 @media (max-width: 600px) {
   :root {
     --sidebar-width: 260px;
-    --header-height: 100px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-header {
+    flex-direction: column;
+    height: auto;
+    padding: 12px 12px 10px;
+    overflow: visible;
+  }
+
+  .header-content {
+    padding-bottom: 6px;
   }
 
   .site-title { font-size: 1.3rem; }
   .header-ornament { display: none; }
+
+  .header-actions {
+    position: static;
+    transform: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .main-layout {
+    flex: 1;
+    height: 0;
+  }
 
   .encyclopedia-card {
     padding: 24px 20px;
@@ -860,6 +901,11 @@ body::before {
     min-width: 220px;
     max-width: 280px;
   }
+}
+
+@media (max-width: 400px) {
+  .site-subtitle { display: none; }
+  .lotus-container { width: 36px; height: 30px; }
 }
 
 /* ===================================================================
@@ -912,7 +958,7 @@ body::before {
 .battle-close {
   position: absolute;
   top: 16px;
-  right: 24px;
+  right: 16px;
   font-size: 2.4rem;
   color: var(--gold);
   background: none;
@@ -920,6 +966,11 @@ body::before {
   cursor: pointer;
   z-index: 10;
   transition: color 0.3s, transform 0.2s;
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .battle-close:hover {
@@ -997,10 +1048,11 @@ body::before {
   color: var(--gold);
   background: none;
   border: 1px solid var(--gold);
-  padding: 6px 18px;
+  padding: 8px 18px;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s;
+  min-height: 40px;
 }
 
 .battle-skip:hover {
@@ -1016,10 +1068,11 @@ body::before {
   color: var(--dark-bg);
   background: linear-gradient(135deg, var(--gold), var(--saffron-light));
   border: 1px solid var(--gold-light);
-  padding: 8px 22px;
+  padding: 10px 22px;
   border-radius: 22px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s;
+  min-height: 44px;
 }
 
 .battle-done:hover {
@@ -1237,13 +1290,18 @@ body::before {
 
 .victory-close-btn {
   position: absolute;
-  top: 12px;
-  right: 16px;
+  top: 8px;
+  right: 8px;
   font-size: 1.8rem;
   color: var(--gold);
   background: none;
   border: none;
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .victory-chakra-container {
@@ -1310,21 +1368,26 @@ body::before {
   gap: 3px;
   background: rgba(26, 15, 10, 0.6);
   border: 1px solid rgba(218, 165, 32, 0.3);
-  border-radius: 16px;
-  padding: 2px;
+  border-radius: 20px;
+  padding: 3px;
 }
 
 .lang-btn {
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   color: rgba(218, 165, 32, 0.7);
   background: transparent;
   border: none;
-  padding: 3px 9px;
+  padding: 6px 12px;
   border-radius: 14px;
   cursor: pointer;
   transition: all 0.25s;
   line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lang-btn:hover {
@@ -1392,7 +1455,7 @@ body::before {
 .forms-close {
   position: fixed;
   top: 16px;
-  right: 24px;
+  right: 16px;
   font-size: 2.2rem;
   color: var(--gold);
   background: none;
@@ -1400,6 +1463,11 @@ body::before {
   cursor: pointer;
   z-index: 10;
   transition: color 0.3s, transform 0.2s;
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .forms-close:hover {
@@ -1680,8 +1748,16 @@ body::before {
   }
 
   .header-btn {
-    font-size: 0.7rem;
-    padding: 4px 10px;
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    min-height: 36px;
+  }
+
+  .sidebar-toggle {
+    width: 48px;
+    height: 48px;
+    right: -52px;
+    font-size: 1.4rem;
   }
 
   .battle-stage {
@@ -1694,20 +1770,34 @@ body::before {
 }
 
 @media (max-width: 600px) {
-  .header-actions {
-    top: auto;
-    bottom: 6px;
-    right: 8px;
-    transform: none;
+  .lang-switcher {
+    border-radius: 22px;
+    padding: 3px;
   }
 
-  .gallery-tab {
-    font-size: 0.72rem;
-    padding: 6px 12px;
+  .lang-btn {
+    font-size: 0.82rem;
+    padding: 8px 14px;
+    min-height: 40px;
+    border-radius: 18px;
   }
 
   .header-btn {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
+    padding: 8px 16px;
+    min-height: 40px;
+  }
+
+  .gallery-tab {
+    font-size: 0.78rem;
+    padding: 10px 16px;
+    min-height: 40px;
+  }
+
+  .popup-read-more {
+    padding: 10px 20px;
+    min-height: 44px;
+    font-size: 0.88rem;
   }
 
   .battle-narration-bar {
@@ -1718,10 +1808,127 @@ body::before {
     font-size: 0.9rem;
   }
 
-  .lang-btn {
-    font-size: 0.65rem;
-    padding: 2px 7px;
+  .battle-skip {
+    padding: 10px 20px;
+    min-height: 44px;
   }
+
+  .battle-done {
+    padding: 10px 22px;
+    min-height: 44px;
+  }
+
+  .forms-close {
+    top: 12px;
+    right: 12px;
+  }
+
+  .form-card-link {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    min-height: 36px;
+  }
+
+  .leaflet-popup-close-button {
+    font-size: 26px !important;
+    top: 4px !important;
+    right: 4px !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .leaflet-control-zoom a {
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    font-size: 20px !important;
+  }
+}
+
+/* ===================================================================
+   TOUCH FEEDBACK (:active states for mobile)
+   =================================================================== */
+
+.lang-btn:active {
+  background: rgba(128, 0, 0, 0.5);
+  color: var(--gold);
+}
+
+.lang-btn.is-active:active {
+  background: rgba(128, 0, 0, 0.9);
+}
+
+.header-btn:active {
+  background: var(--maroon);
+  transform: scale(0.96);
+}
+
+#btnHeaderQuest:active {
+  background: linear-gradient(135deg, #283593, #3949AB);
+}
+
+.popup-read-more:active {
+  background: var(--gold);
+  color: var(--dark-bg);
+}
+
+.gallery-tab:active {
+  background: rgba(128, 0, 0, 0.4);
+  border-color: var(--gold);
+}
+
+.gallery-tab.is-active:active {
+  transform: scale(0.96);
+}
+
+.sidebar-toggle:active {
+  background: var(--deep-red);
+}
+
+.encyclopedia-close:active,
+.battle-close:active,
+.forms-close:active,
+.victory-close-btn:active,
+.image-lightbox-close:active {
+  color: var(--saffron);
+  transform: scale(0.9);
+}
+
+.timeline-item:active {
+  background: rgba(218, 165, 32, 0.15);
+}
+
+.btn-journey:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 16px var(--shadow-gold);
+}
+
+.btn-quest:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 16px var(--shadow-gold);
+}
+
+.btn-watch-battle:active {
+  background: linear-gradient(135deg, #a00000, var(--deep-red));
+  transform: scale(0.97);
+}
+
+.battle-skip:active {
+  background: var(--gold);
+  color: var(--dark-bg);
+}
+
+.battle-done:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 16px var(--shadow-gold);
+}
+
+.form-card-link:active {
+  background: var(--gold);
+  color: var(--dark-bg);
 }
 
 /* Hindi-specific line-height for Devanagari readability */
