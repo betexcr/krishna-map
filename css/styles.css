@@ -85,18 +85,19 @@ body::before {
 }
 
 .site-header::before {
-  bottom: 6px;
+  bottom: 3px;
   background: linear-gradient(90deg, transparent, var(--saffron), transparent);
 }
 
 .site-header::after {
-  bottom: 10px;
+  bottom: 6px;
   background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.3), transparent);
 }
 
 .header-content {
   text-align: center;
   z-index: 1;
+  padding-bottom: 14px;
 }
 
 .header-ornament {
@@ -133,6 +134,9 @@ body::before {
   color: var(--saffron-light);
   opacity: 0.85;
   margin-top: 4px;
+  padding-bottom: 2px;
+  position: relative;
+  z-index: 2;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-style: italic;
